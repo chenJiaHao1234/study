@@ -1,0 +1,51 @@
+
+// less 嵌套写法
+
+// 1. 在 less中可以直接在 父元素的样式中写 子元素的样式
+div {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    a {
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: purple;
+    }
+}
+
+// 2. 也可以使用类名
+.no1 {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    .name {
+        width: 50px;
+        height: 50px;
+        background-color: black;
+    }
+}
+
+
+// 3. 交集/伪类/伪元素选择器  需要在前面添加 '&' 符号
+.no2 {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    &::before {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: green;
+    }
+
+    a {
+        width: 50px;
+        height: 50px;
+        background-color: gray;
+        &:hover {
+            color: red;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* nth-of-type() 和 nth-child()不同，  */
+
+        /* nth-of-type()是把指定元素进行排列序号。  (重要)*/
+
+        /* nth-child()是把所有元素进行排列序号  (重要) */
+
+
+        /* 先看div   再看nth-of-type    和nth-child刚好相反 */
+        article div:nth-of-type(2) {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <p>123</p>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </article>
+</body>
+</html>

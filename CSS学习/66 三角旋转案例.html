@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../品优购案例/shoping/CSS/base.css">
+    <style>
+        .box {
+            width: 230px;
+            height: 30px;
+            margin: 100px 100px;
+            border: 1px solid #666;
+        }
+
+        input {
+            float: left;
+            width: 200px;
+            height: 28px;
+            outline: none;
+            border: 0;
+        }
+        span {
+            position: relative;
+            float: left;
+            display: block;
+            width: 28px;
+            height: 28px;
+        }
+        .sj {
+            position: absolute;
+            top: 9px;
+            left: 7px;
+
+            width: 10px;
+            height: 10px;
+            border-bottom: 1px solid #666;
+            border-right: 1px solid #666;
+            
+            transform: rotate(-45deg);
+            transition: all 0.3s;
+        }
+        div:hover span .sj {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text">
+        <span>
+            <div class="sj">
+
+            </div>
+        </span>
+    </div>
+</body>
+</html>

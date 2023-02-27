@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            border: 5px solid blue;
+            background-color: pink;
+            padding: 5px;
+
+            /* 没有写时盒子默认使用的计算方式:  border+padding+w/h */
+            box-sizing: content-box;
+        }
+        article {
+            width: 200px;
+            height: 200px;
+            border: 5px solid blue;
+            background-color: pink;
+            padding: 5px;
+
+            /* border-box使用的计算方式:  盒子大小=w/h */
+            /* 在写边框和内外边距不再让盒子变大 */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        123
+    </article>
+    <article>
+        123
+    </article>
+</body>
+</html>

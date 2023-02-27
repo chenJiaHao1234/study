@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        /* transform-style */
+        /* 控制子元素是否开启三维立体环境 */
+        /* 代码写给父元素 影响的是子元素 */
+        /* 默认是 flat 不开启3D立体 */
+        /* preserve-3d 子元素开启立体空间 */
+
+
+        body {
+            perspective: 500px;
+        }
+
+
+        .box {
+            transform-style: preserve-3d;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            transition: all 2s;
+        }
+
+        .box:hover {
+            transform: rotateY(60deg);
+        }
+
+        .box div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .box div:nth-child(1) {
+            background-color: purple;
+            transform: rotateX(60deg);
+            z-index: 9;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* n开始是数字0会慢慢增加  每次加一 */
+
+        /* 在实际使用时会先看   nth-child   ,然后看  元素   */
+
+        /* even代表选择所有偶数的子元素  也可以用公式2n */
+        ul li:nth-child(even) {
+            background-color: pink;
+        }
+
+        /* odd代表选择所有奇数的子元素  也可以用公式2n+1/2n-1 */
+        ul li:nth-child(odd) {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

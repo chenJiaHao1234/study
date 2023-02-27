@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            margin: 100px 200px;
+
+        }
+        li {
+            float: left;
+            list-style: none;
+
+            /* 外边距向右移动2px */
+            margin-left: -2px;
+        }
+        a {
+            position: relative;
+            display: block;
+            width: 100px;
+            height: 200px;
+            border: 2px solid pink;
+        }
+
+        a:hover {
+
+            /* 第一种方法加相对定位  (子元素需要加定位时不能用) */
+            /* position: relative; */
+
+
+            /* 第二中方法加等级   (z-index只能在有定位的时候用) */
+            z-index: 1;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+    </ul>
+</body>
+</html>

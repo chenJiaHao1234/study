@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 3D旋转语法格式 */
+
+        /* 1. 绕 x 轴旋转 */
+        /* transform: rotateX(deg) */
+
+
+        /* 2. 绕 y 轴旋转 */
+        /* transform: rotateY(deg) */
+
+
+        /* 3. 绕 z 轴旋转 */
+        /* transform: rotateZ(deg) */
+
+        /* 4. 要旋转的轴为 1 ， 不要旋转的轴为 0 */
+        /* transform: rotate3d(x, y, z, deg) */
+
+        body {
+            perspective: 200px;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+            transform: rotate3d(1, 1, 1, 45deg)
+            
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

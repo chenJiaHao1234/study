@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 标签选择器 */
+        div {
+            color: gold;
+        }
+
+        /* 类选择器 */
+        /* 样式点(.英文点号)定义，结构类(class)调用 ，可单个或多用*/
+        .rgb {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(116, 110, 110);
+        }
+        /* id选择器 */
+        /* 样式#定义，结构id调用，只能调用一次 */
+        #zxc {
+            color: blue;
+        }
+        /* 通配符选择器 */
+        /* 样式*定义，会选择页面所有的标签。 */
+        * {
+            color: rgb(46, 189, 18);
+        }
+
+
+    </style>
+</head>
+<body>
+    选择器分为  基础选择器  和  复合选择器  两大类
+
+    基础选择器：  是由单个标签组成的。又分为标签选择器、 id选择器、和通配符选择器。
+
+    标签选择器：  是指使用html标签的名称作为选择器。 把某一类标签全部选择出来。
+
+    <div class="rgb">12345</div>
+    <div>67890</div>
+    <div class="rgb">zxcvb</div>
+    <div id="zxc">asdfg</div>
+</body>
+</html>

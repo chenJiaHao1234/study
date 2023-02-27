@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 浮动元素是脱离标准流的。1.添加浮动元素(flost)会让标签变成类似ps里面的上下图层关系。 */
+                              /* 2. 给多个标签都设置了浮动，则会在同一行且顶端对齐显示 */
+                              /* 3.设置了浮动元素的标签会具有行内块元素的特性 */
+                              /* 4.浮动元素经常搭配标准流的父级元素一起使用 */
+
+
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;   
+        }
+        .a {
+            float: left;
+        }
+        .c {
+           float: left;
+        }
+        .b { 
+            float: left;
+            width: 300px;
+            height: 300px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">1</div>
+    <div class="b">2</div>
+    <div class="c">3</div>
+</body>
+</html>

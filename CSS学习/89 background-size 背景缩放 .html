@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 控制背景图片的大小 */
+        /* 语法格式 */
+        /* background-size: 图片宽度 图片高度; */
+        /* 单位： px、 百分比、 cover、 contain */
+
+        /* cover： 把背景图片按比例放大到覆盖整个背景区域 */
+
+        /* contian： 把背景图片按比例放大到其宽度或者高度完全适用内容区域 */
+
+
+        div {
+            width: 600px;
+            height: 600px;
+            border: 2px solid #666;
+            background: url(../练习图片/bilibili春.png) no-repeat;
+            
+            background-size: 600px;
+        }
+        div span {
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span></span>
+    </div>
+</body>
+</html>

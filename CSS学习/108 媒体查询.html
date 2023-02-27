@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 设备屏幕上 且 最大宽度为800px 执行写入的样式 */
+        @media screen and (max-width: 800px) {
+            body {
+                background-color: pink;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    媒体查询(media query) 可以针对不同的屏幕尺寸设置不同的样式
+
+    语法格式
+    @media mediatype and|not|only (media feature) {
+    CSS-code;
+    }
+
+
+    mediatype 媒体查询类型: 
+    1. all(用于所有设备) 
+    2. print(用于打印机和打印预览) 
+    3. screen(用于电脑、平板、手机)
+
+
+    关键字: 
+    1. and  可以将多个媒体类型连接到一起
+
+    2. not  排除某个媒体类型
+
+    3. only 指定某个媒体类型
+
+    media feature 媒体特性: 
+    1. width      定义 输出设备 中页面可见区域的宽度
+    2. min-width  定义 输出设备 中页面最小可见区域的宽度
+    3. max-width  定义 输出设备 中页面最大可见区域的宽度
+</body>
+
+</html>

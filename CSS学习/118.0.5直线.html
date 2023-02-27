@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 {
+            height: 1px;
+            background-color: black;
+            margin-top: 10px;
+            transform: scale(.5);
+        }
+
+        .div2 {
+            width: 0;
+            height: 0;
+            border-top: 10px solid pink;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid transparent;
+            transform: rotate(90deg)
+        }
+    </style>
+
+    <script>
+        let arr = [2, 1, 3, 4, 3, 1];
+        let newArr = arr.filter((item, index) => arr.indexOf(item) === index);
+        console.log(newArr);
+    </script>
+</head>
+
+<body>
+    <div class="div1"></div>
+
+    <div class="div2"></div>
+</body>
+
+</html>

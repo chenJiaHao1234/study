@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 过渡属性:transition: 要过渡的属性 花费的时间 过渡的方式 何时开始 */
+
+        /* 谁需要过渡效果就给谁加过渡 */
+
+        /* 要过度的属性:如果有多个属性要过渡可以用  ","  隔开，全部属性直接用  all         */
+        /* 例:transition: width 1s linear, height 1s linear; */
+
+
+        /* 过渡的方式： linear(匀速)  */
+                    /* ease(渐渐变慢)  */
+                    /* ease-in(加速)  */
+                    /* ease-out(减速)   */
+                    /* ease-in-out(先加速再减速) */
+
+
+
+        article {
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+            background-color: pink;
+
+            transition: all 1s linear;
+        }
+        article:hover {
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <article>
+        
+    </article>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 伪元素选择器: */
+        /* ::before  在元素内部的前面插入内容 */
+        /* ::after   在元素内部的后面插入内容 */
+
+        /* 注意: */
+        /* 1. before 和 after是创建了创建了一个行内元素 */
+        /* 2.创建的元素在文档内找不到，所有叫做   伪元素 */
+        /* 3. before 和 after必须带有  content属性    */
+        /* 4.伪元素选择器和标签选择器的权重是一样的     */
+
+        article::before {
+            content: "1";
+
+        }
+        article::after {
+            content: "3";
+        }
+    </style>
+</head>
+<body>
+    <article>
+        2
+    </article>
+             
+</body>
+</html>

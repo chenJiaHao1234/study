@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /* 选择具有value属性的input标签 */
+        input[value] {
+            color: red;
+        }
+
+        /* 选择具有value属性且值是123的input标签 */
+        input[value="123"] {
+            color: pink;
+        }
+
+        /* 选择具有class属性且值是no开头的div标签 */
+        div[class^="no"] {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    属性选择器:[]。属性选择器的权重和类选择器、伪类选择器相同
+
+              属性选择器可以根据元素特定是属性来选择元素。这样可以不借用类选择和id选择器<br>
+    <img src="imags/36属性选择器.jpg" alt="" width="500">
+
+    例如:  <input type="text" value="提示文本">
+
+
+    属性选择器还可以根据属性和值进行选择元素   (重要)
+    <input type="text" value="123">
+    <input type="password" name="" id="">
+
+
+    ^  开头   &结尾   *具有
+    <div class="no1">123</div>
+    <div class="no2">456</div>
+    <div class="no3">789</div>
+    <div class="no4">101</div>
+    <div class="no5">102</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选择父元素中第一个子元素 */
+        ul li:first-child {
+            background-color: pink;
+        }
+
+        /* 选择父元素中最后一个子元素 */
+        ul li:last-child {
+            background-color: red;
+        }
+
+        /* 选择父元素中任意子元素n 。  n可以是数字、关键字、公式。 */
+        ul li:nth-child(3) {
+            background-color: blue;
+        }
+
+        /* 小结 */
+        /* 1.结构伪类选择器一般用于父元素里选择其中子元素 */
+        /* 2.nth-child伪类选择器会先对  父元素  中所有  子元素  进行排序，然后看  第n个子元素  和  父元素标签  是否匹配。不匹配不生效 */
+        /* 3.nth-of-type伪类选择器会先匹配  父元素  ，再根据  父元素  选择  第n个子元素  */
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

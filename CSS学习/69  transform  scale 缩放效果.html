@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 语法格式 */
+        /* transform: scale(x, y) */
+
+
+        /* 重点 */
+        /* 1. x y 之间用逗号分隔 */
+        /* 2. x 和 y 不跟单位， 是 倍数 */
+        /* 3. 可以设置缩放的中心 */
+        /* 4. 不影响其他元素的位置 */
+
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* transform: translate(100px, 100px); */
+            margin: 100px auto;
+            transform-origin: top left; 
+        }
+
+        div:hover {
+            /* 宽度和高度 为原理的 2倍 */
+            /* 第一种方法 */
+            transform: scale(2, 2);
+
+
+            /* 第二种方法 */
+            transform: scale(2);
+
+
+            /* 进行缩小 */
+            transform: scale(0.5, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

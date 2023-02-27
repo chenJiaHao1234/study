@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  设置转换中心点 */
+        /* 语法格式 */
+        /* transform-origin: x y; */
+
+        /* 重点 */
+        /* 1. x 和 y之间用空格隔开 */
+        /* 2. x 和 y 默认中心点是50%  */
+        /* 3. 可以给 x y 设置距离 或者方位词 (top、bottom、left、right) */
+
+        .box {
+            width: 230px;
+            height: 30px;
+            margin: 100px 100px;
+            border: 1px solid #666;
+        }
+
+        input {
+            float: left;
+            width: 200px;
+            height: 30px;
+            outline: none;
+            border: 0;
+            padding: 0;
+        }
+        span {
+            position: relative;
+            float: left;
+            display: block;
+            width: 30px;
+            height: 30px;
+        }
+        .sj {
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            width: 10px;
+            height: 10px;
+            border-bottom: 1px solid #666;
+            border-right: 1px solid #666;
+            transform: rotate(-45deg);
+            transition: all 0.3s;
+            transform-origin: 8px 8px;
+        }
+        div:hover span .sj {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text">
+        <span>
+            <div class="sj">
+
+            </div>
+        </span>
+    </div>
+</body>
+</html>

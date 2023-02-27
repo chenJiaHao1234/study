@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 透视要加给 需要透视的元素的父元素 */
+
+        /* perspective: 可以理解为设置屏幕距离眼睛的距离 */
+        /* transform: translateZ(): 设置盒子距离屏幕的距离 */
+
+        body {
+            perspective: 500px;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transform: translateZ(60px);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

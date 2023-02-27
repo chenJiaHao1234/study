@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f3f5f7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a {
+            display: block;
+            width: 350px;
+            height: 600px;
+            background-color: #fff;
+            margin: 100px auto;
+        }
+
+        a img {
+            width: 100%;
+        }
+
+        a p {
+            margin: 20px;
+            color: #b0b0b0;
+            font-size: 14px;
+        }
+
+        .jg {
+            width: 240px;
+            height: 30px;
+            margin: 0 auto;
+            border: 1px solid red;
+            line-height: 30px;
+        }
+
+        a .zuo {
+            position: relative;
+            float: left;
+            width: 50%;
+            height: 100%;
+            background-color: red;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            line-height: 28px;
+        }
+
+        .zuo .jiao {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            /* 直角三角写法· */
+            border-width: 28px 14px 0 0;
+            border-style: solid;
+            border-color: transparent #b0b0b0 transparent transparent;
+        }
+
+        a .you {
+            float: left;
+            width: 50%;
+            height: 100%;
+            background-color: #b0b0b0;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+        }
+        .sl {
+            margin: 20px 0 20px 20px;
+            font-size: 12px;
+            color: #b0b0b0;
+        } 
+       
+        .sl article {
+            float: left;
+            width: 100px;
+            height: 12px;
+            border: 1px solid red;
+            border-radius: 5px;
+            margin-top: 2px;
+        }
+
+        .sl article div {
+            width: 0;
+            height: 100%;
+            background-color: red;
+            transition: all 1s ease-in-out;
+        }
+        a:hover .sl article div {
+            width: 70%;
+        }
+        a .ljqg {
+            width: 310px;
+            height: 50px;
+            margin-left: 20px;
+            background-color: red;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">
+        <img src="../练习图片/sjt1.webp" alt="">
+        <p>Redmi K50 电竞版 全线拉满的冷血旗舰Redmi K50 电竞版 全线拉满的冷血旗舰</p>
+        <div class="jg">
+            <span class="zuo">&yen;2099
+                <div class="jiao"></div>
+            </span>
+            <span class="you"><del>&yen;2399</del></span>
+        </div>
+        <div class="sl">
+            <article>
+                <div></div>
+            </article>
+            已售30%
+        </div>
+        <div class="ljqg">
+            立即抢购
+        </div>
+    </a>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    定位:把盒子定在某个位置。
+        定位也是在摆放盒子，按照定位的方式移动盒子。
+
+        定位 (position) =定位模式+边偏移
+
+        例如:position: relative;
+                      top: 5px;
+                   bottom: 5px;
+                     lift: 5px;
+                    right: 5px;
+
+
+        四个常用定位模式:
+        static      静态定位     
+        静态定位是元素默认的定位方式，是无定位的意思
+
+        relative    相对定位
+        1.相对定位定位方式是以自身原来的位置进行偏移的定位
+        2.在标准流的位置会继续占用
+
+        absolute    绝对定位
+        1.绝对定位在移动位置时是以最近的一个有定位的父级元素为基准的
+        2.不会再占用原来的位置。和浮动类似但比浮动更高
+
+        子绝父相：子盒子如果用绝对定位时，父盒子要用相对定位
+
+        fixed       固定定位
+        1.固定定位是以浏览器的可视窗口定位的
+        2.固定定位不会占用原先的位置
+
+
+        定位叠放顺序
+        z-index: 数值；
+</body>
+</html>

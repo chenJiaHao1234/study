@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 流式布局就是用 width 百分比进行布局 */
+
+        /* 可以适用窗口的变化 */
+
+        /* 宽度最大值 */
+        /* max-width: ; */
+        
+        /* 宽度最小值 */
+        /* min-width: ; */
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100%;
+            /* 宽度最大值 */
+            max-width: 600px;
+            /* 宽度最小值 */
+            min-width: 300px;
+
+            margin: 0 auto;
+        }
+
+        .box div {
+            float: left;
+            width: 50%;
+            height: 300px;
+        }
+
+        .box div:first-child {
+            background-color: pink;
+        }
+
+        .box div:last-child {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

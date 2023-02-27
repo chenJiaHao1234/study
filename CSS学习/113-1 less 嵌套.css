@@ -1,0 +1,41 @@
+div {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+}
+div a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: purple;
+}
+.no1 {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
+.no1 .name {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+}
+.no2 {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+}
+.no2::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: green;
+}
+.no2 a {
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+}
+.no2 a:hover {
+  color: red;
+}

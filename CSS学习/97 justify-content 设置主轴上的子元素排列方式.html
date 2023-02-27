@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 注意 */
+        /* 使用时要满足 添加 flex布局(display: flex)  和  添加 设置主轴方向(flex-direction) */
+        div {
+            display: flex;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            flex-direction: row;
+
+            /* 沿主轴方向顺序排列 */
+            /* justify-content: flex-start; */
+
+
+             /* 沿主轴反方向顺序排列 */
+            /* justify-content: flex-end; */
+
+
+            /* 沿主轴居中对齐 */
+            /* justify-content: center; */
+
+
+            /* 沿主轴方向平分剩余空间 */
+            /* justify-content: space-around; */
+
+
+            /* 沿主轴方向 先贴平两边 再平分剩余空间 */
+            justify-content: space-between;
+        }
+
+        
+        span {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+</body>
+</html>

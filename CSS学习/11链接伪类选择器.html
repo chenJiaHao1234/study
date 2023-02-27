@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        /* 选择所有未被访问的链接 */
+        a:link {
+            color: black;
+        }
+
+        /* 选择所有已被访问的链接 */
+        a:visited {
+            color: blue;
+        }
+
+        /* 位于鼠标上的链接   (常用)*/
+        a:hover {
+            color: red;
+        }
+
+        /* 鼠标按下未弹起的链接 */
+        a:active {
+            color: green;
+        }
+
+        /* 需要按照LVHA的顺序写，不然会不生效 */
+    </style>
+</head>
+<body>
+    <a href="#">未知链接</a>
+    <a href="1">未知链接2</a>
+</body>
+</html>

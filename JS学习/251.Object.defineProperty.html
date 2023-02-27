@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Object.defineProperty 是ES6新增的添加对象属性的方法
+
+        // 书写格式：
+        // Object.defineProperty(对象名, 修改的属性, {高级属性})
+        let num = 18
+        let obj = {
+            name: '刘德华',
+            sex: '男'
+        }
+
+        Object.defineProperty(obj, 'age', {
+            // value: 20,
+            // enumerable: true, // 控制对象属性是否可以被枚举(遍历)，默认为 false
+            // writable: true, // 控制对象属性是否可以被修改，默认为 false
+            // configurable: true, // 控制对象属性是否可以被删除，默认为 false
+
+
+            // 数据代理 👇重点
+            // 当有人读取 obj 的 age 属性时，get函数就会被调用，会有一个返回值，且返回age的值
+            get() {
+                console.log('age属性被读取');
+                return num
+            },
+
+            // 当有人修改 obj 的 age 属性时，set函数就会被调用
+            set(value) {
+                console.log('age属性被修改');
+                num = value
+            }
+        })
+
+        // 👇读取和修改age属性查看效果
+        console.log(obj);
+    </script>
+</body>
+</html>

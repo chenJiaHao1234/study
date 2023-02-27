@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 根据id 获取元素 -->
+    <div id="time">18:00</div>
+    
+    <script>
+        // 注意点：
+    // 1. 文档是从上往下的运行的, 要先有标签, 然后script要写在标签下面
+
+    // 2. get 获得 Element 元素 By 是通过 Id
+
+    // 3. id是大小写敏感的字符串
+
+    // 4. 返回值是一个元素对象
+
+    // 5. console.dir() 打印返回的元素对象  可以更好的查看属性和方法
+
+        // 根据  getElementById(id)  获取带有 id 的元素对象
+        var times = document.getElementById('time');
+        console.log(times);
+        console.dir(times);
+    </script>
+</body>
+</html>

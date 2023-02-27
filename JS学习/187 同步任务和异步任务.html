@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 同步任务： 同步任务都在主线程上执行， 形成一个执行栈
+
+        // 异步任务：
+        // JS 的异步任务是通过回调函数实现的。 一般情况异步任务有三种类型
+        // 1. 普通时间： click  resize等
+        // 2. 资源加载： laod  error等
+        // 3. 定时器
+
+
+        // 执行顺序为
+        // 1. 执行栈的同步任务先执行
+        // 2. 异步任务(回调函数)放到任务队列中
+        // 3. 同步任务执行完  系统会按次序读取异步任务 被读取的异步任务会进入执行栈然后执行
+
+        // 例
+        console.log(1);
+
+        setTimeout(function () {
+            console.log(3);
+        }, 0)
+
+        console.log(2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var num = 0;
+        // var arr = [1, 17, 59, 24, 99];
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (num < arr[i]) {
+        //         num = arr[i];
+        //     }
+        // }
+        // console.log(num);
+
+        function numMax(arr) {   // arr 是接受某个数组  相当于 arr = [某个数组]
+            var num = 0;
+            for (var i = 0; i <= arr.length - 1; i++) {
+                if (num < arr[i]) {
+                    num = arr[i];
+                }
+            }
+            return num;
+        }
+
+        // 在实际开发中 经常用一个变量来接收函数的返回值(return)
+        var max = numMax([1, 17, 511, 24, 99]);
+        var x = numMax([1, 17, 5111, 24, 99]);
+
+
+        console.log(max);
+        console.log(x);
+
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

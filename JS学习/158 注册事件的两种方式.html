@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        var btn = document.querySelector('button')
+
+
+
+        // 1. 使用 on 开头的事件   传统方法
+        // 特点：事件具有唯一性  同一个元素同一个事件只能设置一种处理函数
+
+
+
+
+        // 2. 方法监听注册方式        
+        //  addEventListener()方法
+        // 特点： 同一个元素同一个事件可以注册多个监听器， 按注册顺序依次执行
+
+        // eventTarget.addEventListener(type, listener)
+
+        // type: 事件类型字符串    注意这里是字符串  绑定事件
+
+        // listener: 事件处理函数  事件发生时，调用这个监听函数
+
+        // useCapture: 可选参数  是一个 布尔值，默认是 false
+
+        // 写法：
+        btn.addEventListener('click', function() {
+
+        })
+    </script>
+</body>
+</html>

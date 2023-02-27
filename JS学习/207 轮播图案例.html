@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../品优购案例/shoping/CSS/base.css">
+    <style>
+        .foucs {
+            position: relative;
+            width: 520px;
+            height: 280px;
+            margin: 200px auto;
+            overflow: hidden;
+        }
+
+        .slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 600%;
+
+        }
+
+        li {
+            float: left;
+        }
+
+
+        .foucs .zuo {
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            left: 0;
+            display: none;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, .5);
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .foucs .you {
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            right: 0;
+            display: none;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, .5);
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .promo-nav {
+            position: absolute;
+            top: 90%;
+            left: 20px;
+
+            height: 20px;
+            border-radius: 10px
+        }
+
+        .promo-nav li {
+            float: left;
+            width: 12px;
+            height: 12px;
+            border: 1px solid #fff;
+            margin: 4px 6.5px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="foucs">
+        <ul class="slideshow">
+            <li><a href="#"><img src="../练习图片/tb1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../练习图片/tb2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../练习图片/tb1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../练习图片/tb4.jpg" alt=""></a></li>
+        </ul>
+
+        <div class="zuo">←</div>
+        <div class="you">→</div>
+
+        <ul class="promo-nav">
+
+        </ul>
+    </div>
+
+    <script>
+        // 1. 获取元素
+        var foucs = document.querySelector('.foucs')
+        var zuo = document.querySelector('.zuo')
+        var you = document.querySelector('.you')
+        var promoNav = document.querySelector('.promo-nav')
+        var slideshow = document.querySelector('.slideshow')
+        var num = 0;
+        var circle = 0;
+        var reference = 0;
+        var flag = true
+
+        function slow(obj, target, callback) {
+            clearInterval(obj.time)
+            obj.time = setInterval(function () {
+                step = (target - obj.offsetLeft) / 10  // 添加动画效果   
+
+                if (step > 0) {
+                    step = Math.ceil(step)
+                } else {
+                    step = Math.floor(step)
+                }
+
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.time)
+                    if (callback) {
+                        callback()
+                    }
+                }
+                obj.style.left = obj.offsetLeft + step + 'px'
+            }, 20)
+        }
+
+
+        // 1. 鼠标经过轮播图 左右按钮显示 离开隐藏
+        foucs.addEventListener('mouseenter', function () {
+            zuo.style.display = 'block'
+            you.style.display = 'block'
+            clearInterval(changing)
+            time = null
+        })
+
+        foucs.addEventListener('mouseleave', function () {
+            zuo.style.display = 'none'
+            you.style.display = 'none'
+            changing = setInterval(function () {
+                you.click()
+            }, 3000)
+        })
+
+
+        // 2. 动态生成小圆圈     创建和添加节点
+        // 3. 给生成的每个 li 添加点事件
+        for (var i = 0; i < slideshow.children.length; i++) {
+            var li = document.createElement('li')
+            li.setAttribute('date-num', i)
+            promoNav.appendChild(li)
+            li.addEventListener('click', function () {
+                for (var i = 0; i < promoNav.children.length; i++) {
+                    promoNav.children[i].style.backgroundColor = ''
+                }
+                this.style.backgroundColor = 'black'
+                // 4. 点击小圆圈滚动图片    移动距离 = 小圆圈的索引号 * 图片的宽度
+                reference = parseFloat(this.getAttribute('date-num'))
+                num = reference
+                circle = reference
+                var x = reference * foucs.offsetWidth
+                slow(slideshow, -x)
+            })
+        }
+        promoNav.children[0].style.backgroundColor = 'black'
+
+        var first = slideshow.children[0].cloneNode(true)
+        slideshow.appendChild(first)
+
+
+
+        // // 2. 点击 左右按钮切换图片     3. 图片切换时小圆圈跟随变色
+        you.addEventListener('click', function () {
+            if (flag) {
+                flag = false
+                if (num == slideshow.children.length - 1) {
+                    num = 0
+                    slideshow.style.left = 0
+                }
+                num = num + 1;
+                slow(slideshow, - num * foucs.offsetWidth, function () {
+                    flag = true
+                })
+
+
+                circle = circle + 1
+                if (circle == promoNav.children.length) {
+                    circle = 0
+                }
+
+                for (var i = 0; i < promoNav.children.length; i++) {
+                    promoNav.children[i].style.backgroundColor = ''
+                }
+                promoNav.children[circle].style.backgroundColor = 'black'
+
+            }
+        })
+
+
+
+        // 2. 点击 左右按钮切换图片     3. 图片切换时小圆圈跟随变色
+        zuo.addEventListener('click', function () {
+            if (num == 0) {
+                num = slideshow.children.length - 1
+                slideshow.style.left = 0
+            }
+            num = num - 1;
+            slow(slideshow, - num * foucs.offsetWidth)
+
+
+            circle = circle - 1
+            if (circle < 0) {
+                circle = promoNav.children.length - 1
+            }
+
+            for (var i = 0; i < promoNav.children.length; i++) {
+                promoNav.children[i].style.backgroundColor = ''
+            }
+            promoNav.children[circle].style.backgroundColor = 'black'
+        })
+
+        var changing = setInterval(function () {
+            you.click()
+        }, 3000)
+
+
+
+    </script>
+</body>
+
+</html>

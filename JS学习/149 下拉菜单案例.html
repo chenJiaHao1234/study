@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: #666;
+            text-decoration: none
+        }
+
+        a:hover {
+            color: #c81623
+        }
+
+        .tab {
+            width: 300px;
+            height: 30px;
+            margin: 200px auto;
+            background-color: #f4f4f4;
+        }
+
+        .tab .tab-lis {
+            float: left;
+        }
+
+        .tab .tab-lis>a {
+            display: block;
+            width: 100px;
+            border-right: 1px solid #666;
+            line-height: 30px;
+            text-align: center;
+        }
+
+
+        .tab-lis ul {
+            background-color: #f4f4f4;
+        }
+
+        .tab-lis ul li a {
+            display: block;
+            width: 94px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-bottom: 1px solid #666;
+            margin: 0 3px;
+        }
+
+        .tab .tab-lis .last {
+            border: 0;
+
+        }
+
+        .tab-lis ul {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="tab">
+        <li class="tab-lis">
+            <a href="#">微博</a>
+            <ul>
+                <li><a href="#">私信</a></li>
+                <li><a href="#">私信</a></li>
+                <li><a href="#" class="last">私信</a></li>
+            </ul>
+        </li>
+        <li class="tab-lis">
+            <a href="#">微博</a>
+
+            <ul>
+                <li><a href="#">私信</a></li>
+                <li><a href="#">私信</a></li>
+                <li><a href="#" class="last">私信</a></li>
+            </ul>
+        </li>
+        <li class="tab-lis">
+            <a href="#" class="last">微博</a>
+
+            <ul>
+                <li><a href="#">私信</a></li>
+                <li><a href="#">私信</a></li>
+                <li><a href="#" class="last">私信</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        var tab = document.querySelector('.tab');
+        var lis = tab.children
+
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function () {
+                this.children[1].style.display = 'block'
+            }
+            lis[i].onmouseout = function () {
+                this.children[1].style.display = 'none'
+            }
+        }
+
+    </script>
+</body>
+
+</html>

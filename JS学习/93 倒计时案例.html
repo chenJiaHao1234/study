@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 倒计时： 输入的时间减去现在的时间
+
+        // 转换公式：
+        // d = parseInt(总秒数 / 60 / 60 / 24);    秒转换为天数
+        // h = parseInt(总秒数 / 60 / 60 % 24);    秒转换为小时
+        // m = parseInt(总秒数 / 60 % 60);         秒转换为分钟
+        // s = parseInt(总秒数 % 60);              转换为秒
+
+
+
+        // 输入总的毫秒减去现在的毫秒，然后把剩下的毫秒数转换单位    1秒 = 1000 毫秒
+        function countDown(time) {
+            var importTime = +new Date(time);                              // 输入的时间
+            var nowTime = +new Date();                                     // 现在的时间
+            var surplusTime = (importTime - nowTime) / 1000   // (输入的时间 - 现在的时间) / 1000 得到 秒
+            d = parseInt(surplusTime / 60 / 60 / 24);
+            d = d < 10 ? '0' + d : d;
+            h = parseInt(surplusTime / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            m = parseInt(surplusTime / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            s = parseInt(surplusTime % 60);
+            s = s < 10 ? '0' + s : s;
+
+            return d + '天' + h + '时' + m + '分' + s + '秒';
+        }
+        console.log(countDown('2022-4-21 00:00:00'));
+        console.log(new Date());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

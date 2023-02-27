@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // apply 可以调用函数和改变 this 的指向， 传递的参数必须以数组的形式
+
+        // 语法格式：
+        // 函数名.apply(this指向的对象, [])
+
+        function fn(arr) {
+            console.log(this);
+            console.log(arr);
+        }
+
+        fn()  // this 指向 window
+
+        let ldh = {
+            name: '刘德华'
+        }
+
+        fn.apply(ldh, [{num1: 1, num2: 2, num3: 3}])  // fn() 的 this 指向变为 ldh
+    </script>
+</body>
+</html>

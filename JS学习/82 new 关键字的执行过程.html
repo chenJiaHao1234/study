@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. new 构造函数在内存中创建了一个空的对象
+        // 2. this 指向刚才创建的空的对象
+        // 3. 执行构造函数里面的代码, 给这个空的对象添加 属性 和 方法
+        // 4. new 返回这个对象 (因为有 new 所以不用 return 再返回值)
+
+        function Human(name, age, sex) {
+            this.name = name;                           // 2. this 指向刚才创建的名字为 Human 的空对象
+            this.age  = age;                            // 3. 接收实参后 执行构造函数里面的代码, 给这个空的对象添加 属性 和 方法
+            this.sex  = sex;
+            this.interest = function(interest) {
+                console.log(interest);
+            }
+        }
+        var xiaoming = new Human('小明','18','男')      // 1. new 构造函数在内存中创建了一个名字为 Human 的空对象
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

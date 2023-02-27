@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'abcdoabcoaboao';                 // 1. 创建一个字符串
+        num = str.indexOf('o');                     // 2. 把出现第一次'o'的索引号赋值给 num 。 num = 4
+        var quantity = 0;                           // 3. 创建一个变量 记录 'o' 出现的次数
+        while (num !== -1) {                        // 7. 判断条件 num 是否等于 -1      找不到 'o' 的时候 num 会等于 -1
+            console.log(num);                       // 4. 输出当前'o'的索引号
+            num = str.indexOf('o', num + 1);        // 5. 从找到'o'后面的一位接着往下查找 'o' 然后把找到的 'o' 的索引号赋值给num
+            quantity = quantity + 1;                // 6. 每循环一次 记录 'o' 的变量就 +1
+        }
+        console.log(quantity);                      
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

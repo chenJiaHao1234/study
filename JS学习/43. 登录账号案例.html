@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var user = prompt('请输入用户名');
+        var upassword = prompt('请输入密码');
+        
+        while (user !== 'admin' || upassword !== '123456') {
+            user = prompt('请输入用户名');
+            upassword = prompt('请输入密码');
+        }
+        alert('欢迎。 ' + user );
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

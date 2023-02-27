@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 求数组[2, 6, 1, 7, 4]所有元素的和还有平均值
+        num = 0;
+        var crr = [2, 6, 1, 7, 4];
+        for (var i = 0; i < crr.length; i++) {
+            num = num + crr[i];
+        }
+        console.log(num);
+        console.log(num / crr.length);
+
+
+
+        // 2. 输出数组[2, 6, 1, 77, 52, 25, 7]中的最大值
+        num1 = 0;
+        var group = [2, 6, 1, 77, 52, 25, 7];
+        for (var n = 0; n < group.length; n++) {
+            if (num1 < group[n]) {
+                num1 = group[n];
+            } else {
+                continue;
+            }
+        }
+        console.log(num1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

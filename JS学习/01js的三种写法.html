@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+    <!-- 内嵌式JS -->
+    <script>
+
+        // js 中多行注释方法  shift + alt + a 
+        
+        alert('显示内容');
+    </script>
+
+    <!-- 外部JS -->
+    <script src=""></script>
+
+
+
+</head>
+<body>
+    JS三种写法为  行内式、  内嵌式、  外部。
+
+    1. 行内式   直接在元素属性写   onclick="alert('')"
+       例如： <input type="button" value="点击"  onclick="alert('点击  显示内容')">
+
+
+    2. 嵌入式   和 style 相似   在 head 标签内 写一个 script  把 js 的内容写在里面
+
+
+    3. 外部式   和 CSS 相似     通过<script src=""></script>  引入
+                使用外部式时注意 script 中间不能写东西
+</body>
+</html>

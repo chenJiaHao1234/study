@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 如果需要反复给数字型变量增加或者减少1 ，可以使用 递增(++) 或 递减 (--)
+
+        // 递增和递减可以放在变量的前面或者后面   
+        
+        // 放在前面时叫 前置递增(递减)运算符
+
+        // 放在后面叫 后置递增(递减)运算符
+
+
+        // (重要)  递增和递减要配合变量使用
+
+        // (重要)  前置递增  先自加，再返回值
+        // ++变量   类似于  变量 = 变量 + 1
+        ++num;
+
+        // 例如：
+               var num = 10;          // num = 10
+               ++num;                 // 进行前置递增
+               console.log(num);      // 输出为 11
+
+
+        // 后置递增    变量++    先返回原值，再自加
+        // 单独使用时效果和前置递增一样
+        num++;
+
+        // 后置递增  先把变量原来的值带入表达式 计算完返回值  然后变量值加一
+        var age = 10;
+        console.log(age++ + 10);      // 输出为20  
+        console.log(age);             // 输出为11
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

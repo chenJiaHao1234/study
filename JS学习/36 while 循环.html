@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // while 循环  当条件表达式结果为 true 执行循环语句 ， 否则 退出循环
+
+        // 和 for 一样 也需要 计数器 和 操作表达式
+
+        
+        /* var i = 1;                       // 声明一个初始化变量 计数器                      
+        while (条件表达式) {
+            执行语句;                  
+            i++;                      // 操作表达式
+        }
+ */
+
+        // 1. 弹出 100 次
+
+        /* var year = 1;
+        while (year <= 100) {
+            if (year == 1) {
+                console.log('现在' + year + '岁了。出生了');
+            } else if (year == 100) {
+            console.log('现在' + year + '岁了。去世了');
+            } else {
+                console.log('现在' + year + '岁了');
+            }
+            year++;
+        } */
+
+
+
+        // 2. 1-100 求总和
+
+        /* var num = 0;
+        var i = 1;
+        while (i <= 100) {
+            num = num + i;
+            i++;
+        }
+        console.log(num); */
+
+
+        // 3. 弹出输出框 输入正确为止
+
+        var select = prompt('输入是否')     
+        while (select !== '是') {
+            select = prompt('输入是否')   // 把输入内容赋值给 select
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

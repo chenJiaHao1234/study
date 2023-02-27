@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = "abaasdffgghjjkkgfdsssss3444343";
+        console.log(str[0]);
+
+        // 找出出现最多的字符和出现次数
+        var obj = new Object();
+        for (var i = 0; i < str.length; i++) {
+            if (obj[str[i]] == undefined) {
+                obj[str[i]] =  1;
+            } else {
+                obj[str[i]] = obj[str[i]] + 1;
+            }
+        }
+        console.log(obj);
+
+        var max = 0;
+        var name;
+        for (var k in obj) {
+            if (obj[k] > max) {
+                max = obj[k];
+                name = k;
+            }
+        }
+        console.log(max);
+        console.log(name);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

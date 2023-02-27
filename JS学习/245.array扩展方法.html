@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Array的扩展方法：Array.from 
+        // 作用：可以把类数组或可遍历对象转换为真正的数组
+
+        // 类数组是一个对象
+        // 类数组这个对象必须包含length属性
+        // 类数组中key是以数字或者数字的字符串组成
+        let ldh = {
+            '0': '刘德华',
+            '1': 18,
+            '2': '男',
+            'length': 3
+        }
+
+        let arr1 = Array.from(ldh)
+        console.log(arr1);
+
+
+        // Array扩展方法：find() 
+        // 作用：用于找出第一个符合条件的数组元素，如果没有找到就返回 undefined
+        
+        let arr2 = [1, 2, 3, 4, 2]
+
+        let arr3 = arr2.find((value, index) => {
+            return value > 2
+        })
+        console.log(arr3);
+
+
+        // Array扩展方法：findindex() 
+        // 作用：用于找出第一个符合条件的数组元素的索引号，如果没有找到就返回 undefined
+        let arr4 = arr2.findIndex((value, index) => {
+            return value > 2
+        })
+        console.log(arr4);
+
+
+        // Array扩展方法：includes
+        // 作用：查找某个数组是否包含给定值，返回的是布尔值
+        let arr5 = arr2.includes(1)
+        console.log(arr5);
+        let arr6 = arr2.includes(5)
+        console.log(arr6);
+
+
+        
+    </script>
+</body>
+</html>

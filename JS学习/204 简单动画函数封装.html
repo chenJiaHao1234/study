@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 100px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector('div')
+
+        // 给不同元素添加不同定时器： 就是把 计时器作为对象属性添加  obj.time
+
+        // 在开始定时器前先清除  防止实际使用中出现多个定时器同时开启
+
+
+        // obj 表示目标对象
+        // target 表示目标位置
+        function animate(obj, target) {
+            // 清除定时器
+            clearInterval(obj.time)
+            // 开启定时器
+            obj.time = setInterval(function () {
+                if (obj.offsetLeft > target) {
+                    clearInterval(obj.time)
+                }else {
+                    obj.style.left = obj.offsetLeft + 1 + 'px'
+                }
+            }, 10)
+        }
+        animate(div, 1000)
+    </script>
+</body>
+
+</html>

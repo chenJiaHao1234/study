@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        button,
+        input {
+            font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif
+        }
+
+        li {
+            position: relative;
+            list-style: none;
+            height: 40px;
+            border-bottom: 1px solid #999;
+
+        }
+
+        div {
+            width: 400px;
+            height: 400px;
+            margin: 200px auto;
+            /* background-color: pink; */
+        }
+
+        img {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 70px;
+        }
+        input {
+            width: 300px;
+            height: 40px;
+            background-color: transparent;
+            border: 0;
+            outline: none;
+            /* border: 1px solid #999; */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>
+                <input type="text" id="input">
+                <img src="../练习图片/bilibili冬.png" alt="" id="img">
+            </li>
+            <li>
+                <input type="password">
+            </li>
+        </ul>
+
+    </div>
+
+    <script>
+        var img = document.getElementById('img');
+        var ipt = document.getElementById('input');
+        var num = 0;
+        img.onclick = function() {
+            if (num == 0) {
+            num++;
+            input.type = 'password'
+            img.src= '../练习图片/bilibili春.png'
+        } else {
+            num--;
+            input.type = 'text'
+            img.src= '../练习图片/bilibili冬.png'
+        }
+        }
+
+        
+        
+        
+    </script>
+</body>
+
+</html>

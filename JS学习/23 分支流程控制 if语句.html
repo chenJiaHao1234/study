@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // if 分支语句  条件表达式为 true 执行     条件表达式为 false 不执行
+
+        // if 基本结构
+        // if (条件表达式) {
+
+        // }
+
+       var age = prompt('请输入您的年龄')
+    //    例如：
+       if (age >= 18) {
+           alert('欢迎')
+       }
+       
+
+
+        // 双分支语句 
+
+        // 语法结构   条件表达式为 true 执行语句1 ，条件表达式为 false 执行语句2
+
+        /* if (条件表达式) {
+            执行语句1
+        } else {
+            执行语句2
+        }  */
+
+
+        // 例如：
+       var age2 = prompt('请输入您的年龄')
+        if (age2 >= 18) {
+           alert('欢迎');
+       } else {
+           alert('抱歉，不符合要求');
+       }
+
+
+
+    //    多分支语句  用多个 条件 来选择不同的 执行语句   多选一的过程
+
+    // 多分支语法结构：
+    if (条件表达式1) {
+        // 执行语句1
+    } else if (条件表达式2) {
+        // 执行语句2
+    } else if(条件表达式3) {
+        // 执行语句3
+    } else {
+        // 执行最后语句
+    }
+
+    执行思路：
+    1. 首先执行 if 里面的 表达式1 表达式1成立则执行 if 的执行语句1 , 然后退出语句
+    2. 如果 if 的表达式1不成立 , 则执行 else if 的表达式2 表达式2成立则执行 else if 的执行语句2.  不成立就继续执行下一个 else if 的表达式3  以此类推
+    3. 如果所有的条件表达式都不成立， 则执行 else 的执行语句
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

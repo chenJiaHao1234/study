@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            margin: 0 auto;
+        }
+        
+        div {
+            width: 400px;
+            height: 50px;
+            /* background-color: pink; */
+            line-height: 50px;
+        }
+        .yes {
+            font-size: 12px;
+            color: green;
+        }
+        .no {
+            font-size: 12px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text">
+        <span class="yes"></span>
+    </div>
+
+    <script>
+        var input = document.querySelector('input');                    // 1. 获得 input 的元素对象
+        var span = document.querySelector('span');                      // 2. 获得 span 的元素对象
+
+        input.onfocus = function () {                                   // 3. input 获得焦点
+            span.innerHTML = '输入6 - 16位数字'                          // 4. 当 input 获得焦点时 span 改变元素内容
+            span.className = 'yes'                                      // 5. 当 input 获得焦点时 span 的类名变为 .yes
+
+        }
+
+        input.onblur = function () {                                    // 6. input 失去焦点
+            if (input.value.length > 5 && input.value.length < 17) {    // 7. 判断(if) input中value的长度是否符合 >5 和 < 17 的条件
+                span.innerHTML = '格式正确';                             // 8. input中value的长度符合 >5 和 < 17 时改变span的内容
+            }else {                                                     // 9. input中value的长度不符合 >5 和 < 17 条件
+                span.innerHTML = '格式错误';                             // 10. input中value的长度不符合 >5 和 < 17 条件时改变span的内容
+                span.className = 'no'                                   // 11. input中value的长度不符合 >5 和 < 17 条件时span 的类名变为 .no
+            }
+                
+            
+        }
+    </script>
+</body>
+</html>

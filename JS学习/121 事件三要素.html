@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="button">点击</button>
+    <script>
+        // 事件 就是可以被 JS 检测到的行为  简单理解为  触发和响应
+        // 事件由三部分组成： 1.事件源   2.事件类型   3.事件处理程序
+
+
+
+        // 1.事件源  事件触发的对象  谁被触发了？
+        var btn = document.getElementById('button');
+
+
+        // 2.事件类型   怎么触发的？
+
+
+        // 3.事件处理程序   通过一个函数赋值的方式完成
+        btn.onclick = function () {
+            alert('事件处理结果');
+        }
+
+    </script>
+</body>
+
+</html>

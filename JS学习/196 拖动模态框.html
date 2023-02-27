@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../品优购案例/shoping/CSS/base.css">
+    <style>
+        .clickLogin {
+            width: 200px;
+            height: 60px;
+            margin: 0 auto;
+        }
+
+        button {
+            width: 200px;
+            height: 60px;
+            border: 0;
+            background-color: brown;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 300px;
+            background-color: #fff;
+            border: 1px solid #666;
+            cursor: move;
+            z-index: 99;
+        }
+
+        .box ul li {
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+        }
+
+        .box ul li label {
+            color: black;
+            font-size: 16px;
+        }
+
+        .box ul li input {
+            width: 300px;
+            height: 35px;
+            border: 1px solid black;
+            outline: none;
+        }
+
+        .box .theme {
+            font-size: 20px;
+            color: #000;
+        }
+
+        .box ul .login input {
+            width: 150px;
+            height: 35px;
+            background-color: brown;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .box .close {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #666;
+            border-radius: 15px;
+            line-height: 24px;
+            text-align: center;
+            font-size: 20px;
+            background-color: #fff;
+            cursor: default;
+        }
+
+        .shelter {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+            var btn = document.querySelector('.clickLogin').querySelector('button')
+            var entry = document.querySelector('.box')
+            var close = entry.children[1]
+            var shelter = document.querySelector('.shelter')
+
+
+            btn.addEventListener('click', function () {
+                entry.style.display = 'block';
+                shelter.style.display = 'block';
+            })
+
+            close.addEventListener('click', function () {
+                entry.style.display = 'none';
+                shelter.style.display = 'none';
+                entry.style.top = '50%'
+                entry.style.left = '50%'
+            })
+
+            // 1. 获得鼠标在盒子中的位置
+            entry.addEventListener('mousedown', function (e) {
+                var x = e.pageX - this.offsetLeft
+                var y = e.pageY - this.offsetTop
+                console.log(x, y);
+
+                // 2. 用鼠标在页面中的位置 减去 鼠标在盒子中的位置 把得到的值 赋值给 盒子的 top 和 left
+                document.addEventListener('mousemove', move)
+
+                function move(e) {
+                    entry.style.left = e.pageX - x + 'px'
+                    entry.style.top = e.pageY - y + 'px'
+
+                }
+
+                // 3. 鼠标弹起是 删除鼠标移动事件
+                document.addEventListener('mouseup', function () {
+                    document.removeEventListener('mousemove', move)
+                })
+            })
+
+
+
+
+
+
+
+        })
+    </script>
+</head>
+
+<body>
+
+    <div class="clickLogin">
+        <button>点 击 登 录</button>
+    </div>
+
+    <div class="box">
+        <ul>
+            <li class="theme">登录会员</li>
+            <li>
+                <label for="account">账号: </label>
+                <input type="text" id="account" value="请输入账号">
+            </li>
+            <li>
+                <label for="password">密码: </label>
+                <input type="password" id="password" value="请输入密码">
+            </li>
+            <li class="login">
+                <input type="submit" value="登 录">
+            </li>
+        </ul>
+        <div class="close">x</div>
+    </div>
+    <div class="shelter"></div>
+</body>
+
+</html>

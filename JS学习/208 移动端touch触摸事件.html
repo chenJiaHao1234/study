@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            var div = document.querySelector('div')
+
+
+            // 手指触摸dom元素触发 (类似鼠标点击点击)
+            div.addEventListener('touchstart', function () {
+                console.log('123');
+            })
+
+
+            // 手指放在一个dom元素上移动时触发
+            div.addEventListener('touchmove', function () {
+                console.log('456');
+            })
+
+
+
+            // 手指离开一个dom元素上移动时触发  (类似鼠标松开)
+            div.addEventListener('touchend', function () {
+                console.log('789');
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

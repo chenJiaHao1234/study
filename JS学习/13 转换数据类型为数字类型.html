@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 字符型转换为数字型
+        var age = prompt('内容');
+
+        // 1.输出(parseInt(变量))      但得到只取整数，小数点后会全部省略
+        // console.log(age);
+        console.log(parseInt(age));
+
+
+        // 2.输出(parseFloat(变量))    可以得到小数点后的数字
+        console.log(parseFloat(age));
+        
+        
+        // 3.Number(变量)
+        console.log(Number(age));
+
+        // 4.利用算术运算  -减   *乘  /除  隐式转换
+        console.log(age - 0);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

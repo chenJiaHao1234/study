@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            
+            margin: 200px auto;
+        } 
+        .amplify {
+            position: relative;
+            width: 200px;
+            height: 30px;
+            background-color: #f3f4f5;
+            display: none;
+        }
+        .triangle {
+            position: absolute;
+            bottom: -10px;
+            left: 5px;
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-top: 5px solid #f3f4f5;
+        }
+        
+        input {
+            position: absolute;
+            top: 35px;
+            left: 0;
+            width: 200px;
+            height: 20px;
+            outline: none;
+            border: 1px solid #666;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="amplify">
+            <div class="triangle"></div>
+        </div>
+        <div class="sr">
+            <input type="text" value="请输入快递单号">
+        </div>
+    </div>
+
+    <script>
+        var amplify = document.querySelector('.amplify')
+        
+        var ipt = document.querySelector('input')
+
+        
+        ipt.addEventListener('focus', function() {
+            this.style.borderColor = 'pink'
+            if (this.value == '请输入快递单号') {
+                this.value = ''
+            }
+            if (this.value != '') {
+                amplify.style.display = 'block'
+            }
+        })
+
+        ipt.addEventListener('blur', function() {
+            this.style.borderColor = '#666'
+            if (this.value == '') {
+                this.value = '请输入快递单号'
+            }
+            amplify.style.display = 'none'
+
+        })
+
+        ipt.addEventListener('keyup', function(e) {
+            amplify.style.display = 'block'
+                amplify.innerHTML = this.value
+                if (this.value == '') {
+                    amplify.style.display = 'none'
+                }
+            })
+    </script>
+</body>
+</html>

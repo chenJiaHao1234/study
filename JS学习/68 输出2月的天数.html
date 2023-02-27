@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> 
+        function Year(year) {               // 2. 接收 实际参数        相当于year = prompt('请输入年份')
+            if (runnian(year)) {            // 3. 接收到 变量year      输入 实际参数给 runnian(year)
+                alert(year + '是闰年');
+            } else {
+                alert(year + '是平年');
+            }
+        }
+        Year(prompt('请输入年份'));          // 1. 输入 实际参数
+
+
+
+
+
+        function runnian(year) {            // 4. 接收到 runnian(year)
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var time = new Date();
+        time.getFullYear();            // 返回当前年份
+        time.getMonth() + 1;           // 返回月份 得到的月份会小一个月 所有 + 1
+        time.getDate();                // 返回的是当天的 号
+        time.getDay();                 // 返回的是周几     周一到周六正常返回对应的数字  周日返回的是0
+
+        // 输出 2024年 4月 20日 周二
+        var year = time.getFullYear();
+        var month = time.getMonth() + 1;
+        var number = time.getDate();
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        week = time.getDay(arr[2]);
+
+        console.log(year + '年' + month + '月' + number + '日' + arr[week])
+
+        // 用函数封装时分秒
+        function Time() {
+            var Time = new Date()
+            var h = Time.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = Time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            
+            var s = Time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            var times = h + ':' + m + ':' + s;
+            return times;
+        }
+        console.log(Time());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

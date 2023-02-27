@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li a {
+            float: right;
+        }
+
+        li {
+            width: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>提交</button>
+    <ul></ul>
+
+
+    <script>
+        var btn = document.querySelector('button');       // 获取元素
+        var ul = btn.nextElementSibling
+        var tta = btn.previousElementSibling
+
+        btn.onclick = function () {                               // 按钮绑定点击事件      
+            if (tta.value !== '') {                               // 判断 如果 文本域 没有输入内容 禁止 按钮
+                var li = document.createElement('li')             // 每次点击都创建一个 li
+                li.innerHTML = tta.value + '<a href="javascript:;" >删除</a>'   // 把 textarea 输入的内容(value) 赋值给 <li></li>
+                // ul.appendChild(li)                             // 把 li 添加到 ul 里面  (这行是添加到后面)
+                ul.insertBefore(li, ul.children[0])               // 把 li 添加到 ul 里面  (这行是添加到前面)
+
+
+
+
+                // 删除元素
+                var as = li.querySelectorAll('a')
+                for (var i = 0; i < as.length; i++) {             // 给所有的a连接绑定点击事件
+                    as[i].onclick = function () {
+                        ul.removeChild(this.parentNode)           // 删除ul中 当前点击的 a链接的父元素
+                    }
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // < !--冒泡排序: 一次比较两个元素，如果顺序错误则把他们交换-- >
+
+        var arr = [5, 4, 3, 2, 1]
+        var empty;
+
+        for (var i = 0; i < arr.length - 1; i++) {                    // 循环次数
+            for (var j = 0; j < arr.length - 1; j++) {                // 交换次数
+                if (arr[j] > arr[j + 1]) {
+                    empty = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = empty;
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

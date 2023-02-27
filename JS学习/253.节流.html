@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        const btn = document.querySelector('button')
+        // 节流：规定时间内只触发一次
+        function jl() {
+            let times
+            return function() {
+                if (!times) {  // 判断times 是否有值
+                    times = setTimeout(function() { // 给 times 添加一个定时器
+                    times = null  // 2秒后清除定时器
+                  }, 2000)
+                  
+                  console.log('执行');
+                  console.log(this);
+                }
+            }
+        }
+        
+        btn.onclick = jl()
+
+    </script>
+</body>
+
+</html>

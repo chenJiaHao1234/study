@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // continue 关键字 : 跳过本次循环 , 继续下一次循环
+                        //  就像是吃五个包子，吃完第一个和第二个 发现第三个坏了不吃，继续吃第四个和第五个
+                             
+
+        // 例如: 
+        
+        
+        for (var i = 1; i <= 5; i++) {
+            if (i == 3) {
+                continue;                // 跳过本次循环
+            } else {
+                console.log('执行第' + i + '次');
+            }
+        }
+        
+
+        // 案例
+        // 1. 求 1-100 之间  能被7整除的数除外的和
+        var num = 0;
+        for (var n = 1; n <= 100; n++) {
+            if (n % 7 == 0) {
+                continue;
+            } else {
+                num = num + n;
+            }
+        }
+        console.log(num);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

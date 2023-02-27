@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="../练习图片/bilibili冬.png" alt=""> <br />
+    <button>刷新</button>
+
+    <script>
+        var img = document.querySelector('img');
+        var btn = document.querySelector('button');
+
+        btn.onclick = function() {
+            if (presentTime < 12) {
+                img.src = '../练习图片/bilibili冬.png';
+            } else {
+                img.src = '../练习图片/bilibili春.png';
+            }
+        }
+
+
+        function time() {
+            var sj = new Date();
+            var h = sj.getHours();
+            return h;
+        }
+        var presentTime = time();
+
+    </script>
+</body>
+
+</html>

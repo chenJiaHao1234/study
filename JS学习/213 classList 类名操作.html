@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="one"></li>
+        <li class="two"></li>
+        <li class="three"></li>
+    </ul>
+    <button>切换类名</button>
+
+    <script>
+        var ul = document.querySelector('ul')
+        var lis = ul.children
+        console.log(lis);
+        console.log(lis[1].classList);
+
+        // 添加类名   element.classList.add('类名')
+        // 会在原来的类名后面添加一个新的类名，不会覆盖前面的 
+        ul.classList.add('classname')
+
+        // 删除类名   element.classList.remove('类名')
+        lis[2].classList.remove('three')
+
+        // 切换类名  element.classList.toggle('类名')
+        // 切换一个类名的添加和删除
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', function() {
+            lis[1].classList.toggle('two')
+        })
+        
+
+    </script>
+</body>
+</html>

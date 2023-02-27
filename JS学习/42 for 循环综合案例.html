@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 求 1 - 100 之间的总和 还有平均值
+        var num = 0;
+        for (var q = 1; q <= 100; q++) {
+            num = num + q;
+        }
+        // 总和
+        console.log('总和是' + num);
+        // 平均值
+        console.log('平均值是' + num / 100);
+
+
+        // 2. 求 1 - 100 所有偶数的和 还有 奇数的和
+        num2 = 0;
+        num3 = 0;
+        for (var w = 1; w <= 100; w++) {
+            if (w % 2 == 0) {
+                num2 = num2 + w; 
+            } else {
+                num3 = num3 + w;
+            }
+        }
+        console.log('偶数总和为' + num2);
+        console.log('奇数总和为' + num3);
+
+
+        // 3. 求100以内 7的倍数的总和
+        var num4 = 0;
+        for (var e = 1; e <= 100; e++) {
+            if (e % 7 == 0) {
+                num4 = num4 + e;
+            }
+        }
+        console.log('7的倍数的总和是' + num4);
+
+        // 4. 输出 ⚪ 矩阵
+        var circle = '';
+        var rows = prompt('输入⚪的行数');
+        var col  = prompt('输入行内⚪的个数');
+        for (var r = 1; r <= rows; r++) {
+            for (var t = 1; t <= col; t++) {
+                circle = circle + '⚪'
+            }
+            circle = circle + '\n'
+        }
+        console.log(circle);
+
+
+        // 5. 使用 for 循环打印三角形的⭐
+        var star = '';
+        var rows2 = prompt('输入⭐的行数');
+        
+        for (var y = 1; y <= rows2; y++) {
+            for (u = y; u <= rows2; u++) {
+                star = star + '⭐'
+            }
+            star = star + '\n';
+        }
+        console.log(star);
+
+
+        // 6. 使用for 循环打印 乘法表
+        sum = ''
+        for (i = 1; i <= 9; i++) {
+            for (o = 1; o <= i; o++) {
+                sum = sum + o +'x' + i + '=' + o * i  + '\t';
+            }
+            sum = sum + '\n';
+        }
+        console.log(sum);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

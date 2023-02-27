@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+        for (var i = 1; i > 0; i++) {
+            var algorithm = prompt('简易计算机' + '\n' + '1.加法计算' + '\n' + '2.减法计算' + '\n' + '3.乘法计算' + '\n' + '4.除法计算' + '\n' + '5.退出');
+
+            if (algorithm == 1) {
+                var num1 = parseFloat(prompt('请输入第一个数值'));
+                var num2 = parseFloat(prompt('请输入第二个数值'));
+                sum = num1 + num2;
+                alert(sum);
+            } else if (algorithm == 2) {
+                var num1 = parseFloat(prompt('请输入第一个数值'));
+                var num2 = parseFloat(prompt('请输入第二个数值'));
+                sum = num1 - num2;
+                alert(sum);
+            } else if (algorithm == 3) {
+                var num1 = parseFloat(prompt('请输入第一个数值'));
+                var num2 = parseFloat(prompt('请输入第二个数值'));
+                sum = num1 * num2;
+                alert(sum);
+            } else if (algorithm == 4) {
+                var num1 = parseFloat(prompt('请输入第一个数值'));
+                var num2 = parseFloat(prompt('请输入第二个数值'));
+                sum = num1 / num2;
+                alert(sum);
+            } else if (algorithm == 5) {
+                break;
+            } else {
+                alert('无效输入');
+            }
+            
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

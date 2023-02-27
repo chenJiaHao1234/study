@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Father() {}
+        Father.prototype.sing = function() {
+            console.log('唱歌');
+        }
+
+        function Son() {}
+        
+        Son.prototype = new Father()
+        Son.prototype.constructor = Son
+
+        let son = new Son()
+
+        console.log(son);
+        console.log(Son.prototype.constructor);
+    </script>
+</body>
+</html>

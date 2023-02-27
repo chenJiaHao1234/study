@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        arr1 = [1, 2, 3, 4, 5]; 
+
+
+        // 末尾添加一个或者多个数组元素  (6, '字符串数据')
+        arr1.push(6, '字符串数据');
+        console.log(arr1);
+
+ 
+        // 开头添加一个或者多个数组元素  (99, 0)
+        arr1.unshift(99, 0);            
+        console.log(arr1);
+
+
+        // 删除数组最后一个元素
+        // arr1.pop();
+        console.log(arr1.pop());          // 输出的是删除的元素
+        console.log(arr1);
+
+
+        // 删除数组开头第一个元素
+        arr1.shift();
+        console.log(arr1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: relative;
+            width: 100%;
+            height: 155px;
+            margin: 100px auto;
+            background-color: pink;
+            overflow: hidden;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        div .foucs {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500vw;
+            
+        }
+
+        div .foucs li {
+            float: left;
+            width: 100vw;
+            height: 155px;
+        }
+
+        div .foucs li img {
+            width: 100%;
+        }
+
+        .promo-nav {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .promo-nav li {
+            float: left;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 3px;
+            background-color: red;
+        }
+
+        .color {
+            background-color: black;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+            // 获取元素
+            var div = document.querySelector('div')
+            var foucs = document.querySelector('.foucs') // -----------------轮播图ul
+            var promonav = document.querySelector('.promo-nav') // ----------小圆点ul
+
+            let startx = null
+            foucs.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                clearInterval(timing)
+                startx = e.touches[0].pageX
+                console.log(startx);
+            })
+            
+            foucs.addEventListener('touchmove', function (e) {
+                e.preventDefault();
+                movex = e.touches[0].pageX - startx
+                console.log(movex);
+                translatex = -num * div.offsetWidth + movex
+                foucs.style.left = focus.offsetLeft + translatex
+            })
+
+
+            var num = 0;
+            // 添加过渡效果   渐慢效果(目标位置 - 当前位置) / 10 
+            function slow(obj, target) {
+                clearInterval(obj.time)
+                obj.time = setInterval(function () {
+                        var step = (target - obj.offsetLeft) / 10
+                        if (step > 0) {
+                            step = Math.ceil(step)
+                        } else {
+                            step = Math.floor(step)
+                        }
+
+                        if (obj.offsetLeft == target) {
+                            clearInterval(obj.time)
+                        } else {
+                            obj.style.left = obj.offsetLeft + step + 'px'
+                        }
+                    }, 20)
+                }
+
+
+            // 根据轮播图的数量 创建小圆点
+            for (var i = 0; i < foucs.children.length; i++) {
+                var li = document.createElement('li') // --------------------创建元素 li
+                li.setAttribute('date-num', i) //----------------------------创建自定义属性
+                promonav.appendChild(li) //----------------------------------添加至 小圆点ul的末尾
+                li.addEventListener('touchstart', function () { // ----------添加点击事件
+                    for (var i = 0; i < promonav.children.length; i++) { // -清除所有li的背景颜色
+                        promonav.children[i].style.backgroundColor = ''
+                    }
+                    this.style.backgroundColor = 'black' // -----------------给当前点击的li添加背景颜色
+                    num = this.getAttribute('date-num') // ------------------获得当前点击li的自定义属性
+                    target = -num * div.offsetWidth // ----------------------获得前往的轮播图的目标位置
+                    slow(foucs, target)
+                })
+            }
+
+            promonav.children[0].style.backgroundColor = 'black' // ---------第一个小圆点添加背景颜色
+            var lis = foucs.children[0].cloneNode(true)
+            foucs.appendChild(lis)
+
+
+            var num2 = 0;
+            var num3 = 0;
+            let timing =  setInterval(function() {
+                // 每三秒切换下一张轮播图
+                if (num2 == foucs.children.length - 1) {
+                    num2 = 0
+                    foucs.style.left = 0
+                }
+                num2 = num2 + 1
+                target2 = -num2 * div.offsetWidth
+                slow(foucs, target2)
+
+
+                // 每三秒切换下一个小圆点
+                if (num3 == promonav.children.length - 1) {
+                    num3 = 0
+                } else {
+                    num3 = num3 + 1
+                }
+                for (var i = 0; i < promonav.children.length; i++) {
+                    promonav.children[i].style.backgroundColor = ''
+                }
+                promonav.children[num3].style.backgroundColor = 'black'
+                
+            }, 3000)
+
+            
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <ul class="foucs">
+            <li><img src="../练习图片/jd1.jpg" alt=""></li>
+            <li><img src="../练习图片/jd2.png" alt=""></li>
+            <li><img src="../练习图片/jd3.jpg" alt=""></li>
+            <li><img src="../练习图片/jd4.jpg" alt=""></li>
+        </ul>
+        <ul class="promo-nav">
+
+        </ul>
+    </div>
+</body>
+
+</html>

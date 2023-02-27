@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 构造函数的语法格式
+        // 声明 构造函数
+        function 构造函数名(形参) {
+            this.属性 = 值
+            this.方法 = function() {
+
+            }
+        }
+
+        // 调用 构造函数
+        new 构造函数名(实参);
+        // ------------------------------------------------------------
+
+
+        function Human(name, age, sex) {
+            this.name = name;
+            this.age  = age;
+            this.sex  = sex;
+            this.interest = function(interest) {
+                console.log(interest);
+            }
+        }
+        var xiaoming = new Human('小明','18','男');     // 构造函数返回的是一个对象
+        var xiaohong = new Human('小红','16','女');
+
+        console.log(xiaoming.name);
+        xiaoming.interest('唱歌');
+        
+
+        console.log(xiaohong.name);
+        xiaohong.interest('跳舞');
+
+
+        
+        // 注意点：
+        // 1. 构造函数首字母必须大写
+        // 2. 构造函数不需要 return 就可以返回结果
+        // 3. 调用构造函数必须使用 new
+        // 4. 只要 new 构造函数名() 就创建了一个对象
+        // 5. 构造函数的 属性 和 方法 前面必须添加 this
+        // 6. 构造函数是泛指的,对象是具体的. 用构造函数创建对象称为对象的实例化
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

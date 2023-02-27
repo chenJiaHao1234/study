@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 200px;
+            left: 0px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn300">300</button>
+    <button class="btn900">900</button>
+    <div></div>
+    <script>
+        // 渐慢动画原理: 让每次移动的像素变小可以实现渐慢效果，  让每次移动的像素变大可以实现渐快效果
+        // 渐慢/渐快效果公式： (目标位置 -/+ 当前位置) / 10   
+        // 注意结果要取整 正数向大的取值(Math.ceil()) 负数向小的取值(Math.floor())
+
+
+
+        var div = document.querySelector('div') // --------------获取元素
+        var btn300 = document.querySelector('.btn300')
+        var btn900 = document.querySelector('.btn900')
+
+        
+        function slow(obj, target) { // -------------------------封装函数
+
+            clearInterval(obj.time) // --------------------------清除上一个计时器
+
+            obj.time = setInterval(function () { // -------------开启定时器
+
+                step = (target - obj.offsetLeft) / 10 // --------渐慢公式 赋值给 step
+                if (step > 0) { // ------------------------------判断 step 是正数还是负数 
+                    step = Math.ceil(step) // ------------------- step 是正数执行 向大的取值(Math.ceil())
+                } else {
+                    step = Math.floor(step) // ------------------ step 是负数执行 向小的取值(Math.floor())
+                }
+
+
+                if (obj.offsetLeft == target) { // --------------判断 div 的left值是否 等于 target
+                    clearInterval(obj.time) // ------------------div 的 left 值等于 target 时，清除定时器
+                } else {
+                    obj.style.left = obj.offsetLeft + step + 'px' // div 的 left 值布等于 target 时，left值 加上 step(公式得到的值)
+                }
+            }, 20)
+        }
+        
+        
+        
+        btn300.addEventListener('click', function() {
+            slow(div, 300)
+        })
+
+        btn900.addEventListener('click', function() {
+            slow(div, 900)
+        })
+    </script>
+</body>
+
+</html>

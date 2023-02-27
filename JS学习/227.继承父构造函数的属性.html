@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Father(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        function Son(name, age) {
+            Father.call(this, name, age)   
+            // 👆改变 构造函数Father 的this的指向，这里的this指向 通过Son创建的对象实例
+        }
+
+        let ldh = new Son('刘德华', 17)
+        let zxy = new Father('张学友', 18)
+
+        console.log(ldh);
+        console.log(zxy);
+    </script>
+</body>
+</html>

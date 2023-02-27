@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <ul>
+        <li>第一个ul的第一个li</li>
+        <li>第一个ul的第二个li</li>
+        <li>第一个ul的第三个li</li>
+        <li>第一个ul的第四个li</li>
+        <li>第一个ul的第五个li</li>
+    </ul>
+
+    <ul>
+        <li>第二个ul的第一个li</li>
+        <li>第二个ul的第二个li</li>
+        <li>第二个ul的第三个li</li>
+        <li>第二个ul的第四个li</li>
+        <li>第二个ul的第五个li</li>
+    </ul>
+
+    <script>
+        // 通过 getElementsByTagName(标签名)方法 返回带有指定标签名的对象的集合
+
+
+        // 1.返回的结果是 元素(标签)对象的集合  以伪数组的形式存储
+        var lis = document.getElementsByTagName('li');   // var lis = []
+        console.log(lis);
+        console.log(lis[2]);
+
+
+        // 2.遍历这个数组
+        for (var i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }
+
+
+        // 3.不管选中的标签有多少个或者没有   返回的元素对象都是以伪数组的形式储存的
+
+
+        // 4.选出第二个ul里面的li     从哪里选？.getElementsByTagName(选什么？)
+        var ulArr = document.getElementsByTagName('ul');  // 选出文档(document)中所有的ul以伪数组的形式存到ulArr里
+        console.log(ulArr);
+        var ilArr = ulArr[1].getElementsByTagName('li');  // 选出 伪数组ulArr索引号为1的数组元素 中所有的li以伪数组的形式存到ilArr里
+        console.log(ilArr);
+    </script>
+</body>
+
+</html>

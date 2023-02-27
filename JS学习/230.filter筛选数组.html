@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // filter主要用于筛选数组
+
+        // 注意点：
+        // 会返回一个新的数组，要一个变量来接收
+
+        // 书写格式
+        // arr.filter(function(数组元素, 索引号, 数组本身) {})
+
+
+        let arr = [1, 10, 2, 20, 3, 30]
+
+        let newArr = arr.filter((value, index) => {
+            return value >= 10
+        })
+
+        console.log(newArr);
+    </script>
+</body>
+</html>

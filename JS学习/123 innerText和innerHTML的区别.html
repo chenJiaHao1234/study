@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+
+    <script>
+        // 作用都是改变元素内容
+        // innerText和innerHTML的区别     
+
+        // 1. Element.innerText 不会识别 标签
+        var div = document.querySelector('div');
+        div.innerText = '<strong> 内容 </strong>';
+
+
+        // 2. Element.innerHTML 可以识别 标签
+        var div2 = document.getElementsByTagName('div');
+        div2[1].innerHTML = '<strong> 内容 </strong>';
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo" in="www" is="ttt"></div>
+
+
+    <script>
+        // 自定义属性的目的： 为了保存和使用数据。自定义属性保存到页面中而不用保存到数据库
+
+        // H5 规定自定义属性都有 date- 开头
+
+        // H5 新增获取自定义属性   Element.dataset.属性
+        
+
+
+        var div = document.querySelector('div');
+
+        // 设置元素属性值
+        // 1. Element.属性 = 值
+        div.id = 'dddd';
+        
+
+        // 2. Element.setAttribute('属性', '值')  主要用于创建自定义属性
+        div.setAttribute('in', 'bbbb')
+
+
+
+        // 移除属性  Element.removeAttribute('属性')
+        div.removeAttribute('is')
+    </script>
+</body>
+</html>

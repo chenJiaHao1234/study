@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div {
+            width: 100px;
+            height: 200px;
+            margin-top: 100px;
+            margin-left: 100px;
+            border: 5px solid #666;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // offset相关属性可以 动态 的得到元素的位置(偏移)、 大小等
+        // 注意：
+        // 1. 获得 该元素 距离 带有定位的父元素 的位置
+
+        // 2. 获得元素自身的大小
+
+
+
+        var div = document.querySelector('div')
+        // 1. 得到元素的位置  返回的是不带单位的数值
+        console.log(div.offsetTop);
+        console.log(div.offsetLeft);
+
+
+        // 2. 得到元素的大小、 宽度、 高度。 返回的是不带单位的数值(包括了内边距 和 边框)
+        console.log(div.offsetWidth);
+        console.log(div.offsetHeight);
+
+
+        // 3. 可以返回带有定位的父元素 否则返回 body
+        console.log(div.offsetParent);
+    </script>
+</body>
+
+</html>

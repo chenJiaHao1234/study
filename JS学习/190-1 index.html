@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 通过 location.search 可以获得 login 的参数
+        console.log(location.search);
+
+        // 1. 获得参数后去掉 ?  通过截取字符串   变量名.substr(从哪个索引号开始截取？, 要取几个字符串？)
+        var params = location.search.substr(1)
+        console.log(params);
+
+        // 2. 去掉 ? 后   通过字符串转换为数组 
+        var arr = params.split('=')
+        console.log(arr);
+
+        var div = document.querySelector('div')
+        div.innerHTML = arr[1] + ', 欢迎您'
+    </script>
+</body>
+</html>

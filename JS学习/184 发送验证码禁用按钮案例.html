@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>发送</button>
+
+    <script>
+        var btn = document.querySelector('button') // ----------------获取元素
+        var countDown = null
+
+        btn.addEventListener('click', function () { // ---------------点击按钮
+            var num = 3; // ------------------------------------------(1) 创建一个变量 赋值 等待时间
+            this.disabled = true // ----------------------------------(2) 禁止点击按钮
+            this.innerHTML = '等待' + num + '秒后可再次发送' // --------(3) 先显示一次 消除第一次 1秒的等待的时间
+            countDown = setInterval(function () { // -----------------(4) 开始定时
+                num = num - 1 // -------------------------------------(5) 定时器每执行一次 num就减1
+                if (num == 0) { // -----------------------------------(6) 定时器每执行一次 判断 num是否等于 0
+                    clearInterval(countDown) // ----------------------(7) num等于 0 时 停止定时器
+                    btn.innerHTML = '发送' // -------------------------(8) num等于 0 时 改变 按钮 的内容
+                    btn.disabled = false // ---------------------------(9) num等于 0 时 开启点击按钮
+                } else {
+                    btn.innerHTML = '等待' + num + '秒后可再次发送' // -(10) num不等于 0 时 改变 按钮 的内容
+                }
+
+            }, 1000)
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>

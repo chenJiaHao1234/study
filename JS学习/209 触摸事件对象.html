@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+            var div = document.querySelector('div')
+
+
+            // 手指触摸dom元素触发 (类似鼠标点击点击)
+            div.addEventListener('touchstart', function (e) {
+                console.log(e);
+                // 事件对象中 touches 可以获得正在触摸屏幕的所有手指的列表
+                // 事件对象中 targettouches 可以获得正在触摸当前dom元素的所有手指的列表
+                // 事件对象中 changedTouches 可以获得手指状态发生改变后的列表
+            })
+
+
+            // 手指放在一个dom元素上移动时触发
+            div.addEventListener('touchmove', function () {
+                console.log('456');
+            })
+
+
+
+            // 手指离开一个dom元素上移动时触发  (类似鼠标松开)
+            div.addEventListener('touchend', function () {
+                console.log('789');
+            })
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

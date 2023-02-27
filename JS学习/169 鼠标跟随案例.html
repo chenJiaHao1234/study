@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="../练习图片/bilibili春.png" alt="">
+    <script>
+        var img = document.querySelector('img')
+
+        // mousemove鼠标移动
+
+        // 把鼠标移动的坐标给相对定位的top和left
+        document.addEventListener('mousemove', function(e) {  //---------给页面绑定鼠标移动事件
+            img.style.left = e.pageX + 'px'
+            img.style.top = e.pageY + 'px'
+        })
+    </script>
+</body>
+</html>

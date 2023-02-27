@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 正则表达式是什么？
+        // 正则表达式是用于匹配字符串中字符组合的模式，在JavaScript中，正则表达式也是对象
+
+
+        // 2. 正则表达式的特点？
+        // 有很强的灵活性、逻辑性和功能性
+        // 可以快速的用简单的方式达到字符串的复杂控制
+
+
+        // 3. 创建正则表达式
+        // (1)调用 RegExp 对象的构造函数创建
+        // 语法格式： let 变量名 = new RegExp(/表达式/)
+        let regexp = new RegExp(/123/)
+        console.log(regexp);
+
+        // (2)通过字面量创建
+        // 语法格式：let 变量名 = /表达式/
+        let rg = /123/
+        console.log(rg);
+
+
+        // 4. 测试正则表达式 test
+        // 语法格式：正则表达式.test(测试的内容)
+        console.log(rg.test(123));  // 测试内容符合正则表达式返回 true
+        console.log(rg.test('abc'));  // 测试内容不符合正则表达式返回 false
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // call 主要作用是改变this的指向
+
+        // 使用的格式:
+        // 函数名.call(this指向的对象, 实参1, 实参2...)
+
+        function fn(x, y, z) {
+            console.log(this);
+            console.log(x + y + z);
+        }
+
+        let ldh = {
+            name: '刘德华'
+        }
+
+        fn() // 打印结果 this 指向 window
+
+        fn.call(ldh, 1, 2, 3) // this指向变为 ldh
+    </script>
+</body>
+</html>

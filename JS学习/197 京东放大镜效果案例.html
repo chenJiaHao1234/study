@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 200px 200px;
+        }
+
+        .box>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box .shelter {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            /* background-color: rgba(0, 0, 0, .5); */
+            background-color: yellow;
+            opacity: .5;
+        }
+
+        .box .amplify {
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 410px;
+            width: 600px;
+            height: 600px;
+            background-color: pink;
+            overflow: hidden;
+            z-index: 99;
+            border: 1px solid #ccc;
+        }
+
+        .maxImg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1200px;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+            // (1) 获取元素
+            var box = document.querySelector('.box')
+            var shelter = document.querySelector('.shelter')
+            var amplify = document.querySelector('.amplify')
+
+            // (2) 鼠标经过显示遮挡层和放大图
+            box.addEventListener('mouseover', function () {
+                shelter.style.display = 'block'
+                amplify.style.display = 'block'
+            })
+
+            // (3) 鼠标经过显示遮挡层和放大图
+            box.addEventListener('mouseout', function () {
+                shelter.style.display = 'none'
+                amplify.style.display = 'none'
+            })
+
+
+            box.addEventListener('mousemove', function (e) {
+                // (4) 获得鼠表在盒子中的坐标
+                var y = e.pageY - this.offsetTop
+                var x = e.pageX - this.offsetLeft
+
+                // (5) 让鼠标处于遮挡层的中心 (是让鼠标)      获得遮挡层移动的距离
+                yCentrality = y - shelter.offsetHeight / 2
+                console.log(yCentrality);
+                xCentrality = x - shelter.offsetWidth / 2
+                console.log(xCentrality);
+
+                // (6) 限制遮挡层移动范围 让遮挡层不超过盒子   获得最大移动距离 xMaxShift   yMaxShift
+                xMaxShift = box.offsetWidth - shelter.offsetWidth
+                yMaxShift = box.offsetHeight - shelter.offsetHeight
+                if (xCentrality <= 0) {
+                    xCentrality = 0
+                } else if (xCentrality >= xMaxShift) {
+                    xCentrality = xMaxShift
+                }
+
+                if (yCentrality <= 0) {
+                    yCentrality = 0
+                } else if (yCentrality >= yMaxShift) {
+                    yCentrality = yMaxShift
+                }
+
+                shelter.style.top = yCentrality + 'px'
+                shelter.style.left = xCentrality + 'px'
+
+                // (7) 
+                var maxImg = document.querySelector('.maxImg')
+
+                // 大图片最大移动距离 = 大图片宽高 - amplify盒子的宽高
+                var maxImgMaxShift = maxImg.offsetWidth - amplify.offsetWidth
+
+                // 大图片移动距离 = 遮挡层移动距离 * 大图片最大移动距离 / 遮挡层最大移动距离
+                var maxImgShiftx = xCentrality * maxImgMaxShift / xMaxShift
+                var maxImgShifty = yCentrality * maxImgMaxShift / yMaxShift
+
+                maxImg.style.left = -maxImgShiftx + 'px'
+                maxImg.style.top = -maxImgShifty + 'px'
+            })
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../练习图片/sjt1.webp" alt="">
+        <div class="shelter"></div>
+        <div class="amplify">
+            <img src="../练习图片/sjt1.webp" alt="" class="maxImg">
+        </div>
+    </div>
+</body>
+
+</html>

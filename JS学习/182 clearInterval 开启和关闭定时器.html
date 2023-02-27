@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>停止定时器</button>
+    <script>
+        // 停止定时器 书写格式
+        // window.clearInterval(定时器ID)
+        var btn = document.querySelector('button')
+        var num = 0;
+        var stop = setInterval(function() {
+            num = num + 1
+            console.log(num);
+        }, 1000)
+        btn.addEventListener('click', function() {
+            clearInterval(stop)
+        })
+        
+    </script>
+</body>
+</html>

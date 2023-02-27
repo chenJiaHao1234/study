@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            width: 100vw;
+            max-width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        div {
+            position: relative;
+            width: 100%;
+            height: 155px;
+            margin: 100px auto;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .focus {
+            overflow: hidden;
+            width: 600vw;
+            margin-left: -100%;
+        }
+
+        .focus li {
+            float: left;
+            width: 100vw;
+            height: 155px;
+        }
+
+        .focus img {
+            float: left;
+            width: 100%;
+            display: block;
+        }
+
+        .promo-nav {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .promo-nav li {
+            float: left;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 3px;
+            background-color: red;
+        }
+
+        div .promo-nav .current {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul class="focus">
+            <li><img src="../练习图片/jd4.jpg" alt=""></li>
+            <li><img src="../练习图片/jd1.jpg" alt=""></li>
+            <li><img src="../练习图片/jd2.png" alt=""></li>
+            <li><img src="../练习图片/jd3.jpg" alt=""></li>
+            <li><img src="../练习图片/jd4.jpg" alt=""></li>
+            <li><img src="../练习图片/jd1.jpg" alt=""></li>
+        </ul>
+        <ul class="promo-nav">
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        const div = document.querySelector('div')
+        const ul = document.querySelector('.focus')
+        const promonav = document.querySelector('.promo-nav')
+        // 获得 div 的宽度
+        const w = div.offsetWidth
+
+
+        // 定时器轮播图片
+        let index = 0
+        let flag = true;
+        let timer = setInterval(function () {
+            index++;
+            const translatex = -index * w
+            // 👇css3过渡效果
+            ul.style.transition = 'all 1s'
+            // 👇css3平移效果
+            ul.style.transform = 'translateX(' + translatex + 'px)'
+        }, 3000);
+
+        // 监听事件transitionend(过渡结束)
+        ul.addEventListener('transitionend', function () {
+            // 当轮播图滚动到最后一张跳回第一张
+            if (index >= 4) {
+                index = 0
+                ul.style.transition = 'none'
+                const translatex = -index * w
+                ul.style.transform = 'translateX(' + translatex + 'px)'
+            } else if (index < 0) {
+                index = 3
+                ul.style.transition = 'none'
+                const translatex = -index * w
+                ul.style.transform = 'translateX(' + translatex + 'px)'
+            }
+
+            // 把 promonav 带有 类名current 的 li 选中(promonav.querySelector('.current'))去掉类名 (remove删除)
+            promonav.querySelector('.current').classList.remove('current')
+            // 给 ul2 第 num 个 li 添加类名 current
+            promonav.children[index].classList.add('current');
+            flag = true;
+        })
+
+        let startx = 0
+        let movex = 0
+            // 👇手指按下时获得手指触摸位置距离文档页面的x坐标
+            ul.addEventListener('touchstart', function (e) {
+                clearInterval(timer)
+                if(!flag) return void 0;
+                // page屏幕左边距离手指触摸位置的距离
+                startx = e.targetTouches[0].pageX
+            })
+
+            // 👇手指滑动时获得滑动的距离(movex)
+            ul.addEventListener('touchmove', function (e) {
+                // e.preventDefault() 阻止默认行为
+                e.preventDefault();
+                if(!flag) return void 0;
+                movex = e.targetTouches[0].pageX - startx
+                // translatex = -index * w + movex
+                // ul.style.transition = 'none'
+                // ul.style.transform = 'translateX(' + translatex + 'px)'
+            })
+
+            // 👇手指松开时movex大于50播放下一张或上一张，小于50回弹
+            ul.addEventListener('touchend', function () {
+                if (Math.abs(movex) > 50) {
+                    if (movex < 0) {
+                        index++
+                    } else {
+                        index--
+                    }
+                    translatex = -index * w
+
+                    ul.style.transition = 'all 1s'
+                    ul.style.transform = 'translateX(' + translatex + 'px)'
+                } else {
+                    translatex = -index * w
+                    ul.style.transition = 'all 1s'
+                    ul.style.transform = 'translateX(' + translatex + 'px)'
+                }
+                //👇手指松开时开启定时器
+                clearInterval(timer)
+                //...你没赋值，下次清除不到啊
+                timer = setInterval(function () {
+                    index++;
+                    const translatex = -index * w
+                    // 👇css3过渡效果
+                    ul.style.transition = 'all 1s'
+                    // 👇css3平移效果
+                    ul.style.transform = 'translateX(' + translatex + 'px)'
+                }, 3000);
+            })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数和类类似
+
+        // 构造函数的属性和方法我们称为成员，成员又分为实例成员和静态成员
+
+        // 实例成员
+        // 构造函数内部通过this添加的为实例成员
+        // 实例成员只能通过实例化对象(new Star)使用
+        // 不能通过构造函数进行访问 比如此案例 (Star.name)
+
+        // 静态成员
+        // 直接通过构造函数本身添加的为静态成员 比如 Star.sex = '男'
+        // 只能通过构造函数进行使用，不能通过this.name使用，使用方式为Star.name
+        function Star(name, age) {
+            this.name = name,
+            this.age = age
+            this.sing = function (sing) {
+                console.log(sing);
+            }
+        }
+
+        let ldh = new Star('刘德华', 18)
+        console.log(ldh);
+        ldh.sing('十七岁')
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象都有一个__proto__属性。__proto__会指向prototype原型对象
+        // 因为__proto__的存在，所以对象可以使用prototype构造函数的属性和方法
+        
+
+        function Star(name) {
+            this.name = name
+        }
+        Star.prototype.sing = function() {
+            console.log('唱歌');
+            that = this
+        }
+
+        let ldh = new Star('刘德华')
+        ldh.sing()
+        // __proto__(对象的原型) 和 prototype(原型对象) 是相等的
+        console.log(ldh.__proto__);
+        console.log(Star.prototype);
+        console.log(ldh.__proto__ === Star.prototype); //返回结果为true
+    </script>
+</body>
+</html>

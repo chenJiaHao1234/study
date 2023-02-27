@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: relative;
+            height: 155px;
+            margin: 100px auto;
+            /* overflow: hidden; */
+        }
+
+        li {
+            list-style: none;
+        }
+
+        div .foucs {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 600%;
+        }
+
+        div .foucs li {
+            float: left;
+            width: 16.67%;
+            height: 155px;
+        }
+
+        div .foucs li img {
+            width: 100%;
+        }
+
+        .promo-nav {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .promo-nav li {
+            float: left;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 3px;
+            background-color: red;
+            transition: all .2s;
+        }
+
+        .promo-nav .current {
+            width: 24px;
+            border-radius: 12px;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+            // 获取元素
+            var div = document.querySelector('div')
+            var ul = document.querySelector('.foucs')
+            var ul2 = document.querySelector('.promo-nav')
+            var w = div.offsetWidth
+
+
+            for (var i = 0; i < ul.children.length; i++) {
+                var li = document.createElement('li')
+                ul2.appendChild(li)
+            }
+
+            ul2.children[0].className = 'current'
+
+            // var lis = ul.children[0].cloneNode(true)
+            // var liss = ul.children[ul.children.length - 1].cloneNode(true)
+            // ul.appendChild(lis)
+            // ul.insertBefore(liss, ul.children[0])
+
+            num = 0;
+            var time = setInterval(function () {
+                // if (num == 4) {
+                //     num = 0
+                //     ul.style.left = -1 * div.offsetWidth + 'px'
+                // }
+                // num = num + 1
+                // ul.style.left = -num * div.offsetWidth + 'px'
+
+
+                // 使用 CSS3 的位移写法
+                num = num + 1
+                var translatex = -num * w
+                ul.style.transition = 'all 1s'
+                ul.style.transform = 'translateX(' + translatex + 'px)'
+            }, 2000)
+
+
+            ul.addEventListener('transitionend', function () {
+                if (num >= 4) {
+                    num = 0;
+                    ul.style.transition = 'none'
+                    var translatex = -num * w
+                    ul.style.transform = 'translateX(' + translatex + 'px)'
+                } else if (num < 0) {
+                    num = 2
+                    ul.style.transition = 'none'
+                    var translatex = -num * w
+                    ul.style.transform = 'translateX(' + translatex + 'px)'
+                }
+
+                // 把 ul2 带有 类名current 的 li 选中去掉类名 (remove删除)
+                ul2.querySelector('.current').classList.remove('current')
+                // 给 ul2 第 num 个 li 添加类名 current
+                ul2.children[num].className = 'current'
+            })
+
+            var x = 0
+            movex = 0
+            ul.addEventListener('touchstart', function (e) {
+                x = e.targetTouches[0].pageX
+                clearInterval(time)
+            })
+
+            ul.addEventListener('touchmove', function (e) {
+                movex = e.targetTouches[0].pageX - x
+                ul.style.transition = 'none'
+                var translatex = -num * w + (movex - x) + 'px'
+                e.preventDefault()
+            })
+
+            ul.addEventListener('touchend', function () {
+                if (Math.abs(movex) > 50) {
+                    if (movex > 0) {
+                        num++
+                    } else {
+                        num--
+                    }
+                    var translatex = -num * w
+                    ul.style.transition = 'all 1s'
+                    var translatex = -num * w + (movex - x) + 'px'
+                } else {
+                    var translatex = -num * w
+                    ul.style.transition = 'all 1s'
+                    var translatex = -num * w + (movex - x) + 'px'
+                }
+
+                clearInterval(time)
+                time = setInterval(function () {
+                // 使用 CSS3 的位移写法
+                num = num + 1
+                var translatex = -num * w
+                ul.style.transition = 'all 1s'
+                ul.style.transform = 'translateX(' + translatex + 'px)'
+            }, 2000)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <ul class="foucs">
+            <li><img src="../练习图片/jd4.jpg" alt=""></li>
+            <li><img src="../练习图片/jd1.jpg" alt=""></li>
+            <li><img src="../练习图片/jd2.png" alt=""></li>
+            <li><img src="../练习图片/jd3.jpg" alt=""></li>
+            <li><img src="../练习图片/jd4.jpg" alt=""></li>
+            <li><img src="../练习图片/jd1.jpg" alt=""></li>
+        </ul>
+
+        <ul class="promo-nav"></ul>
+    </div>
+</body>
+
+</html>

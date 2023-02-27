@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 变量的作用域 一样可以范围 全局变量和局部变量
+
+        // 全局变量: 能在 script 中都可以使用的一个变量
+
+        // 局部变量: 只能在当前函数作用域使用的一个变量
+
+        var num1 = 10;         // num1 属于全局变量 可以用log输出
+        console.log(num1);
+
+        function fn() {
+            num2 = 20;         // 在函数内没有声明的变量属于全局变量，可以直接log输出
+
+            var num3 = 30;     // 函数里的 num3 属于局部变量  在函数外直接用log输出会报错
+
+            
+        }
+        fn()
+        console.log(num2);
+        console.log(num3);
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

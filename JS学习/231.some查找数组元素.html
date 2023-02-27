@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // some 主要用于查找数组元素
+
+        // 注意点:
+        // some 会返回一个布尔值, 要一个变量来接收
+        // some 查找到第一个符合条件的数组元素后就会停止循环，不会再继续查找
+
+
+        let arr = ['小米', '华为', '苹果']
+
+        let flog = arr.some((value, index) => {
+            return value === '华为'
+        })
+
+        console.log(flog);
+    </script>
+</body>
+</html>

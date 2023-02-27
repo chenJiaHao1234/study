@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div in="www" id="demo"></div>
+    <script>
+        var divs = document.querySelector('div');
+
+        // 获取元素的属性值
+        // 1. Element.属性  获取的是内置的属性值(元素本身自带的属性)  不能获取自定义的属性
+        console.log(divs.id);
+        console.log(divs.in);
+
+        // 2. Element.getAttribute('属性') 获取元素的属性 也可以获取自定义的属性(主要用来获取自定义的属性)
+        console.log(divs.getAttribute('id'));
+        console.log(divs.getAttribute('in'));
+    </script>
+</body>
+</html>

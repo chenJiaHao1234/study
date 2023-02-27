@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 相当于for循环的语法糖
+        // 语法格式：
+        // array.forEach(function(数组元素, 索引号, 数组本身) {})
+
+
+        let sum = 0
+
+        let arr = [10, 20, 30, 40]
+        arr.forEach(function(value, index, arr) {
+            console.log('数组元素:' + value);
+            console.log('索引号:' + index);
+            console.log('数组本身' + arr);
+            sum = sum + value
+        })
+
+        console.log('总和是:' + sum);
+    </script>
+</body>
+</html>

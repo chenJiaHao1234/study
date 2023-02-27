@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 闭包：有权访问另一个函数作用域的变量的函数
+        function makeFunc() {
+            let name = "Mozilla";
+            function displayName() {
+                console.log(name);
+            }
+            return displayName;
+        }
+
+        let myFunc = makeFunc();
+        myFunc();
+
+
+        // -----------
+        function fn1() {
+            let num = 999
+            function fn() {
+                console.log(num);
+            }
+            return fn()
+        }
+        fn1()
+    </script>
+</body>
+
+</html>

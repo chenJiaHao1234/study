@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 400px;
+            margin: 200px auto;
+
+        }
+
+        .box .thead .th {
+            float: left;
+            width: 100px;
+            height: 30px;
+            border: 2px solid #666;
+            line-height: 30px;
+            text-align: center;
+            margin-left: -2px;
+
+
+        }
+
+        .tbody div {
+            float: left;
+
+            height: 30px;
+
+            margin-top: -2px;
+        }
+
+        .tbody div span {
+            display: block;
+            float: left;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            border: 2px solid #666;
+            margin-left: -2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <div class="thead">
+            <div class="th">姓名</div>
+            <div class="th">科目</div>
+            <div class="th">成绩</div>
+            <div class="th">操作</div>
+        </div>
+        <div class="tbody">
+
+        </div>
+    </div>
+
+    <script>
+        var datum = [
+            {
+                name: '小明',
+                subject: '数学',
+                mark: '90'
+            },
+            {
+                name: '小红',
+                subject: '数学',
+                mark: '95'
+            },
+            {
+                name: '小黄',
+                subject: '数学',
+                mark: '80'
+            },
+            {
+                name: '小蓝',
+                subject: '数学',
+                mark: '85'
+            },
+        ]
+
+        var tbody = document.querySelector('.tbody')          // 获得元素
+
+        for (var i = 0; i < datum.length; i++) {              // 根据对象的长度创建节点(div)
+            var tr = document.createElement('div')
+            tbody.appendChild(tr)                             // 把 div 放进 .tbody
+
+
+            for (var k in datum[i]) {                         // 遍历数组中的每一个对象 然后根据对象的个数创建节点(span)
+                var td = document.createElement('span')
+
+                td.innerHTML = datum[i][k]                // 把每个对象的每个属性值放进 span 里面
+                tr.appendChild(td)                        // 把 span 放进div里面
+            }
+
+            var dlt = document.createElement('span')
+
+
+            dlt.innerHTML = '<a href="javascript:;">移除</a>'
+
+            tr.appendChild(dlt)
+
+            
+        }
+        var as = document.querySelectorAll('a')
+            for (var n = 0; n < as.length; n++) {
+                as[n].onclick = function () {
+                    tbody.removeChild(this.parentNode.parentNode)
+                }
+            }
+    </script>
+</body>
+
+</html>

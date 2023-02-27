@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            width: 330px;
+            height: 100px;
+            margin: 200px auto;
+        }
+
+        ul li {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+            font-size: 36px;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            var lis = document.querySelectorAll('li')
+
+            var importTime = +new Date('2022-5-6 00:00:00')      // 输入的时间
+            countDown()//-------------------------------------------先调用函数一次， 防止页面刷新空白
+            setInterval(countDown, 1000)// -------------------------每一秒都调用一次函数
+
+            function countDown() {
+                var nowTime = +new Date()                        // 当前的时间
+                var surplusTime = (importTime - nowTime) / 1000  // (输入的时间 - 现在的时间) / 1000 得到 秒
+                var h = parseInt(surplusTime / 60 / 60 % 24);
+                h = h < 10 ? '0' + h : h
+                lis[0].innerHTML = h;
+                var m = parseInt(surplusTime / 60 % 60);
+                m = m < 10 ? '0' + m : m
+                lis[1].innerHTML = m;
+                var s = parseInt(surplusTime % 60);
+                s = s < 10 ? '0' + s : s;
+                lis[2].innerHTML = s;
+            }
+            
+            
+        })
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+
+</body>
+
+</html>

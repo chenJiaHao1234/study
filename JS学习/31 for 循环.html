@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // for 循环 重复执行某些代码  通常和计数有关
+        // for 语法结构
+        /* for (初始化变量; 条件表达式; 操做表达式) {
+            循环语句
+        } */
+
+        
+        // 1. 初始化变量  是 var 声明的一个变量。在 for 中通常作为计数器
+        // 2. 条件表达式 绝对每次循环是否继续  就是循环终止条件
+        // 3. 操作表达式 循环最后执行的代码 常用于更新计数器变量 (递增或递减)
+
+
+        var num = 1;
+        for (var i = 1; i <= 100; i++) {
+            num = num + i;
+        }
+        alert(num);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

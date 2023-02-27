@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 窗口加载事件: 等待页面所有都加载代码完才会触发是事件， 作用是可以让js放在任何位置
+
+        // 两种写法
+        // 1. 注意这种写法会有冲突
+        window.onload = function () {
+
+        }
+
+
+        // 2. 建议使用第二种方法
+        window.addEventListener('load', function() {
+
+        })
+    </script>
+</body>
+</html>

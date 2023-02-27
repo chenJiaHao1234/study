@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 200px;
+            height: 25px;
+            border: 1px solid black;
+            color: gray;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="ipt" value="邮箱/ID/手机号">
+    <input type="text" id="ipt2" value="密码">
+
+    <script>
+        var ipt = document.getElementById('ipt');
+
+        ipt.onfocus = function () {
+            this.style.border = '1px solid pink'
+            if (ipt.value === '邮箱/ID/手机号') {
+                this.value = '';
+                this.style.color = 'black'
+            }
+        }
+
+        ipt.onblur = function () {
+            this.style.border = '1px solid black'
+            if (ipt.value === '') {
+                this.value = '邮箱/ID/手机号';
+                this.style.color = 'gray'
+
+            }
+        }
+
+        var ipt2 = document.getElementById('ipt2');
+
+        ipt2.onfocus = function () {
+            this.style.border = '1px solid pink'
+            if (ipt2.value === '密码') {
+                this.value = '';
+                this.style.color = 'black'
+                this.type = 'password'
+            }
+        }
+
+        ipt2.onblur = function () {
+            this.style.border = '1px solid black'
+            if (ipt2.value === '') {
+                this.value = '密码';
+                this.style.color = 'gray'
+                this.type = 'text'
+            }
+        }
+    </script>
+</body>
+
+</html>

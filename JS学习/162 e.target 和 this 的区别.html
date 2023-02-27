@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+
+    <script>
+        var btn = document.querySelector('button')
+
+
+        // e.target 返回的是触发事件的对象      点谁就返回谁
+        // this     返回的是绑定事件的对象      哪个元素绑定了这个点击事件就返回谁
+        btn.addEventListener('click', function(e) {
+            console.log(e.target);
+            console.log(this);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 300px;
+            height: 300px;
+            /* background-color: pink; */
+            margin: 200px auto;
+            text-align: center;
+            border: 1px solid #666;
+        }
+
+        table tr {
+
+            border: 1px solid #666;
+
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td><input type="checkbox" id="all"></td>
+                <td>名称</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>苹果</td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>梨</td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>西瓜</td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>香蕉</td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>桃子</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var all = document.getElementById('all');
+        console.log(all);
+
+        var ipt = document.querySelector('tbody').querySelectorAll('input');
+        console.log(ipt);
+
+        // 1. 全选和取消全选
+        all.onclick = function () {                 // 1. 点击 全选的复选框
+            console.log(all.checked);               // checked属性选中返回值是 true 取消选中是 flase
+            for (var i = 0; i < ipt.length; i++) {  // 2. 让 tbody 每一个 input.checked属性 都等于 all.checked属性
+                ipt[i].checked = this.checked;
+            }
+        }
+
+        // 2. 
+        for (var j = 0; j < ipt.length; j++) {          // 让每一个 复选框 都添加事件
+            ipt[j].onclick = function () {              // 把 复选框的事件 设置为点击
+                var flag = true;                        // 创建一个变量 值设置为 true
+                for (var n = 0; n < ipt.length; n++) {  // 每次点击复选框都检查每个复选框是否有被选中
+                    if (ipt[n].checked == false) {      // 如果有一个复选框没有被选中
+                        flag = false;                   // flag 就变为 false
+                    }
+                }
+                all.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

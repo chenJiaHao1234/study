@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Date 是日期对象   必须使用 new 调用和创建日期对象
+
+        // 1. 如果date后面没有跟参数，则会返回当前系统的当前时间
+        var time = new Date();
+        console.log(time);
+
+        // 2. 后面()里的参数跟的是数字型日期格式为 (2022, 4, 20)
+        var time1 = new Date(2022, 4, 20);
+        console.log(time1);                // 返回的月份会比输入的大一月
+
+        // 3. 后面()里的参数跟的是字符串型日期格式为 (日期'2022-4-20' 时分秒20:30:30)
+        var time2 = new Date('2022-4-20 20:30:30');
+        console.log(time2);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

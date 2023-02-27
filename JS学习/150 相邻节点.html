@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>span</span>
+    <div>div</div>
+    <p>p</p>
+
+    <script>
+        var div = document.querySelector('div');
+
+        // 获得下一个节点 .nextSibling
+        //console.log(div.nextSibling);             // 包括所有节点
+
+        console.log(div.nextElementSibling);        // 只得到元素节点
+
+
+
+        // 获得上一个节点 .previousSibling   
+        //div.previousSibling                       // 包括所有节点
+
+        console.log(div.previousElementSibling);    // 只得到元素节点
+    </script>
+</body>
+</html>

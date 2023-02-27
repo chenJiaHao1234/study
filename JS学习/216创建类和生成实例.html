@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 注意：
+        // 这里类是对象的共同拥有的部分，可以是属性和方法
+        // 类中有一个默认创建的函数 constructor
+        // 类中的方法或函数不需要写 function前缀
+        // 类中的多个方法和函数不需要逗号进行分隔
+
+
+        // 创建类
+        // 语法：class 类名 {} 
+
+        // 用类创建实例对象
+        // let 名称 = new 类名()
+
+
+        class star {
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+            sum(x, y) {
+                console.log(x + y);
+            }
+            hobby(song) {
+                console.log(song);
+            }
+            
+        }
+
+        let ldh = new star('刘德华', 20)
+        
+        console.log(ldh)
+        ldh.sum(1, 2)
+        ldh.sum(11, 22)
+        ldh.hobby('十七岁')
+    </script>
+</body>
+</html>

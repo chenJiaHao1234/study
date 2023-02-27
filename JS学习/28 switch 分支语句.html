@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. switch 语句也是多分支语句 也是用于实现 多选一 
+        // 2. switch 根据表达式的值  执行对于的 case 的结果   如果没有对应的 case ， 则执行 default
+
+
+        // . 语法结构
+        switch (表达式) {
+            case 值1:
+                执行语句1;
+                break; 中断语句
+            case 值2:
+                执行语句2;
+                break;
+            default:
+                执行语句3;
+                break;
+        }
+
+
+        // 例如： 
+        switch (1+1) {
+            case 1:
+                alert('语句1');
+                break;
+            case 2:
+                alert('语句2');
+                break;
+            case 3:
+                alert('语句3');
+                break;
+            default:
+                alert('语句4');
+                break;
+        }
+
+        // 注意事项： 
+        // 1. 在开发中 表达式经常使用变量来替代
+        // 2. 表达式的值 和 case的值 必须是全等的(===)
+        // 3. 如果在执行完语句没有 break 时 会继续执行下一个语句  记得写 break
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

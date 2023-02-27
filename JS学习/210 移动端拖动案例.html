@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function (e) {
+
+            var div = document.querySelector('div')
+
+            // 思路
+            // 1. 触摸获得 当前元素的位置 和 触摸的位置
+            // 2. 移动触摸的位置 并把 移动的距离 给元素 元素当前的位置 +/- 移动的位置
+            // 3. 阻止默认行为 e.preventDefault();
+            // 3. 触摸结束
+
+            var fingerx = null
+            var fingery = null
+            var divx = null
+            var divy = null
+
+            div.addEventListener('touchstart', function (e) {
+
+                // 获得手指在div中触摸的位置坐标
+                console.log('x' + e.targetTouches[0].pageX);
+                console.log('y' + e.targetTouches[0].pageY);
+                fingerx = e.targetTouches[0].pageX
+                fingery = e.targetTouches[0].pageY
+
+                // 获得div当前在页面中的坐标
+                divx = this.offsetLeft
+                divy = this.offsetTop
+            })
+
+            div.addEventListener('touchmove', function (e) {
+
+                // 阻止默认行为
+                e.preventDefault()
+
+                // 获得手指在div移动后的位置坐标
+                var movex = e.targetTouches[0].pageX
+                var movey = e.targetTouches[0].pageY
+
+
+                // div 的位置坐标 + (触摸位置移动后的位置坐标 - 触摸位置原本的位置坐标)
+                this.style.left = divx + (movex - fingerx) + 'px'
+                this.style.top = divy + (movey - fingery) + 'px'
+            })
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

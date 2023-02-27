@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.bilibili.com/">bilibili</a>
+    <script>
+        // 让链接不跳转 或者 不满足某些条件不提交
+        var a = document.querySelector('a')
+
+        a.addEventListener('click', function(e) {
+            e.preventDefault();                  // 阻止链接跳转  addEventListener只认这一种方法
+
+           
+        })
+         // 也可以用 return false 阻止跳转  只作用于传统注册事件方式  但要注意使用 retuen 后面再有代码也不会执行
+    </script>
+</body>
+</html>

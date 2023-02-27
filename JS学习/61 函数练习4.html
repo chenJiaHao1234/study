@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 冒泡排序
+
+        function sort(arr) {     // arr = [5, 4, 3, 2, 1]
+            for (var i = 1; i < arr.length; i++) {               // 有多少个数需要交换?
+                for (var n = 0; n < arr.length - 1; n++) {       // 一个数需要交换几次?
+                    if (arr[n] > arr[n + 1]) {
+                        var empty;
+                        empty = arr[n];
+                        arr[n] = arr[n + 1];
+                        arr[n +1] = empty;
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(sort([5, 4, 3, 2, 1]));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

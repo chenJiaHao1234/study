@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'abcdabcababbbbff';
+        
+        var obj = {};                                           // 调用对象的属性  obj[属性]
+
+
+        for (var i = 0; i < str.length; i++) {                  // 1. 遍历 字符串
+            var empty = str.charAt(i);                          // 2. 把某个字符 赋值给 empty
+            if (obj[empty] != undefined) {                      // 3. 判断 对象obj 是否有 赋值empty 的字符的 属性
+                obj[empty]++;                                   // 4. 有就 自加1    没有就把1赋值给这个对象obj的属性
+            } else {
+                obj[empty] = 1;
+            }
+        }
+        console.log(obj);
+
+        var max = 0;                                            // 5. 创建一个变量max  把0 赋值给 max
+        var name;                                               // 6. 创建一个空的变量name
+        for (var k in obj) {                                    // 7.遍历对象 obj
+            if (obj[k] > max) {                                 // 8.判断 obj的属性值 是否大于 max 
+                max = obj[k];                                   // 9.当对象obj属性值大于max的值时，把 对象obj属性值 赋值给max
+                name = k;                                       // 10. 当对象obj属性值大于max的值时，把属性名 赋值给 name
+            }
+        }
+        console.log(max);
+        console.log(name);
+        
+
+        
+
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

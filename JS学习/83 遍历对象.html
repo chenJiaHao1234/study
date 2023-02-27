@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // for...in语句: 可以对数组或者对象的属性进行循环
+
+        // for...in 里面的变量 常用 k 或 key 
+
+        // for...in循环语句语法格式
+        for (var 变量k in 对象) {
+
+        }
+
+
+        var dog = {
+            name:    '可可',
+            type:    '阿拉斯加犬',
+            age:     '5岁',
+            pigment: 'brown',
+            // bark: function() {
+            //     console.log('汪汪汪');
+            // },
+            // showFilm: function() {
+            //     console.log('演戏');
+            // }
+        }
+
+        for (var k in dog) {
+            console.log(k);            // 输出变量    输出的是属性
+            console.log(dog[k]);     // 对象名[k]   输出的是属性值    也可以遍历对象的方法, 不过一般不会这么写
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

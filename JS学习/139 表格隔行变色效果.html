@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr td {
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .tr {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <table align="center" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>代码</th>
+                <th>名称</th>
+                <th>最新净值</th>
+                <th>累计净值</th>
+                <th>前单位净值</th>
+                <th>净值增长率</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>003526</td>
+                <td>xxxxxxxxxxxx3个月定期债券</td>
+                <td>1.075</td>
+                <td>1.097</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+
+            <tr>
+                <td>003526</td>
+                <td>xxxxxxxxxxxx3个月定期债券</td>
+                <td>1.075</td>
+                <td>1.097</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+
+            <tr>
+                <td>003526</td>
+                <td>xxxxxxxxxxxx3个月定期债券</td>
+                <td>1.075</td>
+                <td>1.097</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+
+            <tr>
+                <td>003526</td>
+                <td>xxxxxxxxxxxx3个月定期债券</td>
+                <td>1.075</td>
+                <td>1.097</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+
+            <tr>
+                <td>003526</td>
+                <td>xxxxxxxxxxxx3个月定期债券</td>
+                <td>1.075</td>
+                <td>1.097</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var trs = document.querySelector('table').querySelector('tbody').querySelectorAll('tr');
+        // console.log(trs);
+
+        for (var i = 0; i < trs.length; i++) {
+            trs[i].onmouseover = function () {           // 鼠标经过这个(this) 行时， 颜色改变
+                this.className = 'tr';
+            }
+            trs[i].onmouseout = function () {            // 鼠标离开这个(this) 行时， 颜色改变
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 构造函数的this指向他的调用者
+        // 原型对象的this指向他的调用者
+        let abc
+        let abc2
+
+        function Star(name) {
+            this.name = name
+            abc = this
+        }
+
+        Star.prototype.sing = function() {
+            console.log('唱歌');
+            abc2 = this
+        }
+
+        let ldh = new Star('刘德华')
+        ldh.sing()
+        
+        console.log(ldh === abc); // 返回结果为true, 证明构造函数this指向ldh
+        console.log(ldh === abc2); // 返回结果为true, 证明原型对象this指向ldh
+    </script>
+</body>
+</html>

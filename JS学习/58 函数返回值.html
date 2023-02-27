@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 函数只是实现某种功能，结果需要返回给 调用者函数名()
+
+        // 2. 函数遇到 return 就返回结果
+
+        // 3. 函数遇到 return 后就不再执行接下去的代码 相当于终止运行
+
+        // 4. return 只能返回一个值， 如果写了多个值时 返回最后一个
+
+        // 5. 如果需要 return 返回多个值时, 可以用数组
+
+        // 6. 函数都有返回值, 如果有 return 就返回 return 后面的值 没有 return 就返回 undefined
+        function sum(num1, num2) {
+            num = 0;
+            for (var i = num1; i<= num2; i++) {
+                num = num + i;
+            }
+            return num;
+        }
+        console.log(sum(1, 100));
+        console.log(sum(1, 10));
+        
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

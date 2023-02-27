@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var money = 100;
+        var catalogue = prompt('请输入对应操作的数字' + '\n'
+            + '1.存钱' + '\n'
+            + '2.取钱' + '\n'
+            + '3.显示账户余额' + '\n'
+            + '4.退出')
+
+        for (var i = 1; i >= 1; i++) {
+
+            if (i !== 1) {
+                catalogue = prompt('请输入对应操作的数字' + '\n' + '1.存钱' + '\n' + '2.取钱' + '\n' + '3.显示账户余额' + '\n' + '4.退出');
+            }
+
+            
+            if (catalogue == 1) {
+                // 存钱
+                money = money + parseFloat(prompt('输入储存金额'));
+                alert('您的账户余额为： ' + money);
+            } else if (catalogue == 2) {
+                // 取钱
+                money = money - parseFloat(prompt('输入取出金额'));
+                alert('您的账户余额为： ' + money);
+            } else if (catalogue == 3) {
+                // 显示账户余额
+                alert('您的账户余额为： ' + money);
+            } else if (catalogue == 4) {
+                // 退出
+                alert('正在退出！');
+                break;
+            } else {
+                alert('无效输入！');
+            }
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 检查是否为数组的两种方法
+
+        var a = new Array();
+        var b = new Object();
+
+
+        // 1. instanceof
+        console.log(a instanceof Array);
+        console.log(b instanceof Array);
+
+        
+        // 2. Array.isArray(参数)
+        console.log(Array.isArray(a));
+        console.log(Array.isArray(b));
+
+
+
+
+
+        function arr(arr) {
+            if (arr instanceof Array) {
+                var newArr = [];
+                for (var i = arr.length - 1; i >= 0; i--) {
+                    newArr[newArr.length] = arr[i];
+                }
+                return newArr;
+            } else {
+                return '必须是数组格式'
+            }
+        }
+        console.log(arr([1, 2, 3, 4]));     // 输入实参为数组正常输出
+        console.log(arr());                // 输入实参不为数组或者为空 返回 '必须是数组格式'
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 什么是闭包？
+        // 可以访问另一个函数作用域中的变量的函数
+        // 一个作用域可以访问另一个函数的局部变量
+
+
+        // 闭包的作用是什么？
+        // 延伸了变量的作用范围
+        function fun1() {
+            let num = 10
+
+            return function () {
+                console.log(num);
+            }
+        }
+
+        let f = fun1()
+        f()
+    </script>
+</body>
+</html>

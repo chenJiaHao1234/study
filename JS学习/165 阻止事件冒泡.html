@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <ul>
+            <li>123</li>
+        </ul>
+    
+    <script>
+        // 阻止事件冒泡
+        var li = document.querySelector('li')
+        var ul = document.querySelector('ul')
+
+        
+        li.addEventListener('click', function (e) {
+            alert('li')
+            e.stopPropagation()    // 加上这行代码阻止事件冒泡
+        }, false)
+
+
+        ul.addEventListener('click', function (e) {
+            alert('ul')
+        }, false)
+    </script>
+</body>
+</html>

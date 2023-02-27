@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">盒子</div>
+    <div class="box">盒子</div>
+    <div class="box">盒子</div>
+    <div id="box">盒子</div>
+
+    
+
+    <script>
+        // 1. 通过类名获得某些元素的集合     从哪里选？.getElementsByClassName(选什么？)
+        var boxs = document.getElementsByClassName('box');   // 只选择类名为 box 的标签
+        console.log(boxs);
+
+
+        // 2. 返回指定选择器的第一个元素对象     从哪里选？.querySelector(选什么？)  注意()这里要写清楚是什么选择器
+        var box1 = document.querySelector('.box');
+        console.log(box1);
+        var box2 = document.querySelector('#box');
+        console.log(box2);
+
+
+        // 3. 返回指定选择器的所有元素对象的集合       从哪里选？.querySelectorAll(选什么？)  注意()这里要写清楚是什么选择器
+        var allbox = document.querySelectorAll('#box')
+        console.log(allbox);
+    </script>
+</body>
+
+</html>

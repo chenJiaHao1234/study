@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>123</button>
+    <script>
+        var btn = document.querySelector('button')
+
+        // 1. () 里面的内容就是事件对象 可以当作 形参
+        // 2. 事件对象 只在有事件时才存在， 他是系统自动创建的 不需要传递参数
+        // 3. 事件对象 是事件的一系列相关的数据的集合 
+        // 4. 事件对象 可以自己命名   常用 elent、 evt、 e
+        btn.onclick = function (事件对象) {}
+
+
+        btn.onclick = function (e) {
+            console.log(e);
+        }
+    </script>
+</body>
+</html>

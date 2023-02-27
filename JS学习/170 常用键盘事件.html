@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // keyup 键盘按键弹起时触发
+        document.addEventListener('keyup', function () {
+            console.log('弹起');
+        })
+
+
+        // 在 down 和 press 同时存在时，down会先执行
+        // keydown 键盘按键按下时触发
+        document.addEventListener('keydown', function () {
+            console.log('按下(down)');
+        })
+
+
+        // keydown 键盘按键按下时触发
+        document.addEventListener('keypress', function () {
+            console.log('按下(press)');
+        })
+    </script>
+</body>
+
+</html>

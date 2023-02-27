@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 注意点：
+        // 1. trim 的作用是可以去除字符串型数据左右两边的空格
+        // 2. trim 不会改变原字符串的内容，而是会生成一个新的字符串
+
+
+        let str = '  abc  '
+        let str1 = str.trim()
+
+        console.log(str);
+        console.log('字符长度：' + str.length);
+
+        console.log(str1);
+        console.log('字符长度：' + str1.length);
+    </script>
+</body>
+</html>

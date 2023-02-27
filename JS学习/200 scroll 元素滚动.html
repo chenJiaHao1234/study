@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 5px solid #ccc;
+            margin: 200px auto;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <!-- scrollTop 和 scrollLeft 详细介绍 -->
+    <img src="../JS学习/images/scroll 元素滚动.jpg" alt="">
+
+
+    <div>
+        内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容
+    </div>
+
+    <script>
+        var div = document.querySelector('div')
+
+
+
+        // 返回内边距、 内容区域、 包括边框的宽度   和 offset 的区别是 scroll 是内容本身超过了盒子的宽度时返回的时内容的宽度
+        console.log(div.scrollWidth);
+
+
+        // 返回内边距、 内容区域、 包括边框的高度   和 offset 的区别是 scroll 是内容本身超过了盒子的高度时返回的时内容的高度
+        console.log(div.scrollHeight);
+
+
+
+        div.addEventListener('scroll', function() {
+            // 滚动会返回数值
+            console.log(div.scrollTop);
+        })
+
+        
+    </script>
+</body>
+</html>

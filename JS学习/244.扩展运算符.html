@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 扩展运算符可以将 数组或者对象 转为用逗号分隔的参数序列
+        let arr = [1, 2, 3, 4, 5]
+    
+
+        // 👇两个log输出结果相同， log输出是看不到逗号的
+        console.log(...arr); 
+        console.log(1, 2, 3, 4, 5);
+
+
+        // 扩展运算符运用：合并数组
+
+        // 合并 array1 和 array2 数组
+        let array1 = [1, 2, 3]
+        let array2 = [4, 5, 6]
+
+        // 方法1：创建一个新，将两个数组以扩展运算符的形式放进去
+        let array3 = [...array1, ...array2]
+        console.log(array3);
+
+        // 方法2：使用push方法，把另一个数组以扩展运算符的形式放进去
+        array1.push(...array2)
+        console.log(array1);
+    </script>
+</body>
+</html>

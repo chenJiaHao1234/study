@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <p>当前数：{{num}}</p>
+
+        <!-- <button v-on:click = "num++">+</button> -->
+        <!-- <button v-on:click = "num--">-</button> -->
+
+        <!-- v-on: 可以用来绑定事件 -->
+        <button v-on:click = "up">+</button>
+        <button v-on:click = "down">-</button>
+    </div>
+
+    
+    <script>
+        // 声明式编程
+        let app = new Vue ({
+            el: 'div',
+            data: {
+                num: 0,
+            },
+            // methods 用于在 vue 对象中定义方法
+            methods: {
+                up: function () {
+                    this.num++;
+                },
+                down: function () {
+                    this.num--;
+                }
+            }
+        })
+    </script>
+
+
+    <!-- <script>
+        // 命令式编程
+        var div = document.querySelector('div')
+
+        num = 0
+        div.children[1].addEventListener('click', function () {
+            num++
+            div.children[0].innerHTML = '当前数为' + num
+        })
+
+        div.children[2].addEventListener('click', function () {
+            if (num > 0) {
+                num--
+            div.children[0].innerHTML = '当前数为' + num
+            }
+        })
+    </script> -->
+</body>
+</html>

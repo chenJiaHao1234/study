@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+    <style>
+        .color {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <ul>
+            <li v-for="(item, index) in fruit"  @click="clickcolor(index)" :class="{color: num == index}">{{index}}{{item}}</li>
+        </ul>
+    </div>
+
+    <script>
+        const obj = new Vue ({
+            el: '.app',
+            data: {
+                fruit: ['西瓜','苹果','香蕉','梨子','菠萝'],
+                num: -1,
+            },
+            methods: {
+                clickcolor(index) {
+                    this.num = index;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

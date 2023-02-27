@@ -1,0 +1,79 @@
+<!-- pormise 是什么？ -->
+<!-- pormise 是异步编程的一种解决方案 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>网络请求数据aaa</button>
+    <script>
+        // promise 在创建时就需要传入一个函数 
+        // 传入的函数包含两个参数 resolve(解决) reject(拒绝)
+        // 在 promise 中调用 resolve()/reject() 会执行 then()/catch()
+    
+        // 简单来说就是一旦有异步操作时就用promise包起来
+        // 当异步操作拿到结果时通过调用 resolve() 把代码传到 then() 进行处理
+        new Promise((resolve, reject) => {
+            // 第一次网络请求
+            setTimeout(() => {
+    
+                // 网络请求成功的时候调用resolve 会到 then 执行
+                resolve(),
+    
+                // 网络请求失败的时候调用reject 会到 catch 执行
+                reject()
+            }, 3000);
+        }).then(() => {
+            // 第一次拿到结果的处理代码
+            console.log('hello');
+            console.log('hello');
+            console.log('hello');
+            return new Promise((resolve, reject) => {
+                // 第二次网络请求
+                setTimeout(() => {
+                    resolve()
+                }, 3000)
+            }).then(() => {
+                // 第二次拿到结果的处理代码
+                console.log('good morning');
+                console.log('good morning');
+                console.log('good morning');
+            })
+        }).catch(() => {
+
+        });
+
+
+        // 练习 
+        // 要求： 
+        // 1. 网络请求到数据 aaa -> 对请求到的代码进行处理
+        // 2. 对请求到的数据 aaa 进行拼接 111  在对数据进行处理
+        // 3. 继续拼接 222 再对数据进行处理
+        let btn = document.querySelector('button')
+        new Promise((resolve, reject) => {
+            btn.addEventListener('click', () => {
+                resolve('aaa')
+            })
+        }).then((res) => {
+            console.log('处理' + res);
+
+            return new Promise((resolve, reject) => {
+                resolve(res + '111')
+            }).then((res) => {
+                console.log('处理' + res);
+
+                    //  👇 new Promise 简写
+                return Promise.resolve(res + '222').then((res) => {
+                    console.log('处理' + res);
+                })
+            })
+        })
+    </script>
+</body>
+</html>

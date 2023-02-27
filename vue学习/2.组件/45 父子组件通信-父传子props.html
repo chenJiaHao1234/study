@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+           <!--       ↓ porps绑定的属性 ↓    43行 -->
+        <cpnname :name123="name" :arrs="arr"></cpnname>
+    </div>
+
+    <template id="cpn">
+        <div>
+            <h2>组件</h2>
+            <h2>{{name123}}</h2>
+            <h2>{{arrs}}</h2>
+            <h4 v-for="(item, index) in arrs">{{index}}-{{item}}</h4>
+        </div>
+    </template>
+
+    <script>
+
+
+
+        const obj = new Vue({
+            el: '.app',
+            data: {
+                name: '小明',
+                arr: ['数组元素1', '数组元素2', '数组元素3', '数组元素4']
+            },
+            components: {
+                cpnname: {
+                    template: cpn,
+                    // 子组件要使用父组件的属性 要通过 props
+                    // 用法
+                    // 1. props 中添加属性名称
+                    // 2. 在组件名中 通过 v-bind 绑定对应属性
+                    // 3. props 的值可以是数组也可以是对象
+
+                    // 值为数组形式↓
+                    // props: ['name123', 'arrs']
+
+                    // 值为对象形式↓
+                    props: {
+                        // 第一种类型限制
+                        // 属性名： 数据类型 ---- 对象的形式 可以限制输入的数据类型
+                        // name123: String,
+                        // arrs: Array,
+
+
+                        // 第二种
+                        // 提供默认值   在没有属性绑定时的默认属性
+                        // 提供必传值   必须传递的属性
+                        // 属性名：{}
+                        name123: {
+                            type: String,
+                            default: 'name',
+                        },
+                        arrs: {
+                            type: Array,
+                            // 默认值是对象或者数组时 必须是一个函数 然后返回值
+                            default() {
+                                return []
+                            },
+                        }
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../vue 学习/31-1 图书购物车案例.css">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+        <table>
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th>书籍名称</th>
+                    <th>购买日期</th>
+                    <th>价格</th>
+                    <th>数量</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in arr">
+                    <td>{{index + 1}}</td>
+                    <td>{{arr[index].bookname}}</td>
+                    <td>{{arr[index].date}}</td>
+                    <td>￥{{arr[index].price.toFixed(2)}}</td>
+                    <td>
+                        <button @click="qincrease(index)">+</button>
+                        {{arr[index].quantity}}
+                    <button @click="reduce(index)" :disabled="arr[index].quantity == 1">-</button></td>
+                    <td>
+                        <button @click="del(index)">移除</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>总价： ￥{{totes().toFixed(2)}}</div>
+    </div>
+
+    <script src="../vue 学习/31-1 图书购物车案例.js"></script>
+</body>
+
+</html>

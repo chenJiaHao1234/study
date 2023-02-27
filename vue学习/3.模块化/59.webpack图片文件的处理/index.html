@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 整理： -->
+    <!-- 1. 安装 url-loader 然后在 webpack.config.js 中的 module 添加一段代码(具体在webpack网站查看) -->
+
+    <!-- 2. 添加的代码中有一个 limit 如果添加的图片小于 limit 的 8KB 会将图片编译为base64字符串形式
+            如果添加的图片大于 limit 的 8KB 就需要安装 file-loader 进行加载 -->
+
+    <!-- 3. 超过8KB的图片在打包时会在 dist文件夹 生成一张以哈希值命名的图片
+            然后需要我们去给他指定这个路径 在 webpack.config.js 中找到 options 
+            添加 name: '/imges/[name].[hash:8].[ext]' -->
+    <script src="./dist/burdle.js" type="module"></script>
+</body>
+</html>

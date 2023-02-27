@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- key的作用？
+        首先 key 是对象的标识。
+
+        当数据发生改变时，vue会根据新数据生成新的虚拟dom，
+        然后进行 新虚拟dom 和 旧虚拟dom 的对比：
+
+        对比情况一：
+        在新虚拟dom中和旧虚拟dom中找到了相同的key：
+        1.新虚拟dom中和旧虚拟dom中内容相同，直接使用之前的真实dom
+        2.新虚拟dom中和旧虚拟dom中内容不同，新虚拟dom生成新的真实dom，替换旧的真实dom
+
+        对比情况二：
+        在新虚拟dom中和旧虚拟dom中没有找到相同的key：
+        1.新虚拟dom生成真实dom，渲染到页面进行展示
+
+
+        2. 用index作为key时可能产生的问题
+        用index作为key时，然后打乱顺序
+        虽然不会对最终效果有影响，但会产生没必要的真实dom更新造成效率低
+     -->
+    <div id="app">
+        <button @click="addxiaolv">点击添加小绿</button>
+        <div v-for="(item, index) in arr" :key="item.name">
+            {{item.name}}--{{item.age}}
+            <input type="text">
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+            arr: [{name: '小红', age: 18},{name: '小明', age: 19},{name: '小兰', age: 17}],
+            xiaolv: {name: '小绿', age: 20}
+            },
+            methods: {
+                addxiaolv() {
+                    this.arr.unshift(this.xiaolv)
+                }
+            },
+        })
+    </script>
+</body>
+</html>

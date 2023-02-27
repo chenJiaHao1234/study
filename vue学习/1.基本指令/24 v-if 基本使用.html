@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app" >
+        <!-- 语法格式 -->
+        <!-- v-if = "布尔值" -->
+        <h2 v-if="judge">v-if="true"时显示</h2>
+        <h2 v-else>v-if="false"时显示</h2>
+
+
+        <!-- v-else-if -->
+        <h2 v-if="num >= 90">优</h2>
+        <h2 v-else-if="num >= 80">良</h2>
+        <h2 v-else="num >= 60">及格</h2>
+    </div>
+
+    <script>
+        const obj = new Vue ({
+            el: '.app',
+            data: {
+                judge: true,
+                num: 100,
+            }
+        })
+    </script>
+</body>
+</html>

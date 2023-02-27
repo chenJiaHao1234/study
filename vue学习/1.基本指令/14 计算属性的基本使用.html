@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">{{wholeName}}</div>
+
+    <script>
+        let obj = new Vue ({
+            el: '.app',
+            data: {
+                name1: '张三',
+                name2: '李四',
+            },
+            // computed 计算属性
+            // 1. 他是一个属性。在引入时不加()
+            // 2. computed 相对于 methods 来说 computed 会有缓存 
+            //    多次调用时不需要重新计算更有效率
+            computed: {
+                // 3. 下面的这个方法是一个简写 (详细写在 p16)
+                wholeName: function () {
+                    return this.name1 + ' ' + this.name2;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

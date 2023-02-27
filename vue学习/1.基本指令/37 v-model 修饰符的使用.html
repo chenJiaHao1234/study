@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <!-- 修饰符 .lazy  -->
+        <!-- 默认情况下 输入框中的数据一旦发生改变对于的 data 里面的数据也会发生改变 -->
+        <!-- 这里让 加上 .lazy 让输入框失去焦点或者按下回车才发生数据改变 -->
+    <input type="text" v-model.lazy="islazy">
+    <h2>{{islazy}}</h2>
+
+
+
+    <!-- 修饰符 .number  -->
+    <!-- 默认情况下输入框输入的内容都会被看作 字符串数据类型 -->
+    <!-- 加上 .number 可以让输入框的内容转换成 数字数据类型 -->
+    <input type="number"  v-model.number="isnumber">
+    <h2>{{isnumber}}-{{typeof isnumber}}</h2>
+
+
+
+    <!-- 修饰符 .trim -->
+    <!-- 去除输入框两边的空格 -->
+    <input type="text"  v-model.number="istrim">
+    <h2>{{istrim}}</h2>
+    </div>
+
+    <script>
+        const obj = new Vue ({
+            el: '.app',
+            data: {
+                islazy: 'hello',
+                isnumber: 0,
+                istrim: ''
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <!-- 打开页面f12控制器查看 -->
+        <!-- 同样使用五次 methods 被调用了5次，而 computed 被调用了1次 -->
+        <h4>{{fullName()}}</h4>
+        <h4>{{fullName()}}</h4>
+        <h4>{{fullName()}}</h4>
+        <h4>{{fullName()}}</h4>
+        <h4>{{fullName()}}</h4>
+        <h4>{{fullName2}}</h4>
+        <h4>{{fullName2}}</h4>
+        <h4>{{fullName2}}</h4>
+        <h4>{{fullName2}}</h4>
+        <h4>{{fullName2}}</h4>
+    </div>
+
+    <script>
+        let obj = new Vue ({
+            el: '.app',
+            data: {
+                name1: '张三',
+                name2: '李四',
+            },
+            methods: {
+                fullName: function () {
+                    console.log('methods:调用了');
+                    return this.name1 + ' ' + this.name2;
+                }
+            },
+            computed: {
+                fullName2: function () {
+                    console.log('computed:调用了');
+                    return this.name1 + ' ' + this.name2;
+                }
+            },
+        })
+    </script>
+</body>
+</html>

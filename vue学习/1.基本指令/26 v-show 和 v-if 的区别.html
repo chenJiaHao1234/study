@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <!-- v-if 和 v-show 的相同点 -->
+        <!-- 都可以用来控制元素的显示和隐藏 -->
+
+        <!-- v-if 和 v-show 的不同点 -->
+        <!-- 隐藏的方式不同 -->
+        <!-- v-if 是直接从DOM中删除 -->
+        <!-- v-show 是在行内样式中添加 display：none -->
+        <h2 v-if="condition">包含 v-if 的元素</h2>
+        <h2 v-show="condition">包含 v-show 的元素</h2>
+    </div>
+
+    <script>
+        const obj = new Vue ({
+            el: '.app',
+            data: {
+                condition: true,
+            }
+        })
+    </script>
+</body>
+</html>

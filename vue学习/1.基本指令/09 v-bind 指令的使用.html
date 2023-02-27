@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+</head>
+<body>
+    <!-- v-bind的作用：绑定属性 -->
+    <!-- 只要是属性就可以用 v-bind 进行绑定 -->
+    <!-- 书写格式 -->
+    <!-- v-bind:属性 = "" 或  :属性 = "" -->
+
+
+    <!-- 1. v-bind 基本使用 -->
+    <div class="app">
+        <img v-bind:src = "imgUrl" alt="">
+        <a v-bind:href = "aHref">百度</a>
+
+        <!-- 简写 -->
+        <a :href="aHref">baidu</a>
+    </div>
+    <script>
+        new Vue ({
+            el: '.app',
+            data: {
+                imgUrl: '../练习图片/bilibili冬.png',
+                aHref: 'http://www.baidu.com',
+            }
+        })
+    </script>
+</body>
+</html>

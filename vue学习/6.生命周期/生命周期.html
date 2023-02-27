@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        <div>num的值为: {{num}}</div>
+        <button @click="add()">点击num+1</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                num: 1
+            },
+            methods: {
+                add() {
+                    this.num++
+                },
+            },
+            beforeCreate() {
+                console.log('beforeCreate: 这个阶段准备初始化。无法访问data的数据和methods的方法');
+            },
+            created() {
+                console.log('created: 这个阶段可以访问data和methods, 一般在这个阶段请求网络数据');
+            },
+            beforeMount() {
+                console.log('beforeMount: 这个阶段可以显示出未经过vue解析的Dom的结构。且可以对Dom进行操作，但最终不会显示操作的结果');
+            },
+            mounted() {
+                console.log('mounted: 这个阶段初始完成。页面可以显示出经过Vue解析过的Dom。且对Dom进行操作时可以显示出操作的结果');
+            },
+            beforeUpdate() {
+                console.log('beforeUpdate: 这个阶段准备更新，数据已经更新，但是页面还没更新')
+            },
+            updated() {
+                console.log('updated: 这个阶段更新完成，数据已经更新，页面也已经更新')
+            },
+            beforeDestroy() {
+                console.log('beforeDestroy: 这个阶段准备销毁，一般在这个阶段做收尾操作');
+            },
+        })
+    </script>
+</body>
+
+</html>

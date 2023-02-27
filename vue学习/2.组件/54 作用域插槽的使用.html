@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 整理： -->
+    <!-- 此案例想改变插槽的默认内容 -->
+    <!-- 1. 首先在子元素中给插槽绑定属性 v-bind:自定义属性名="要绑定的属性" -->
+    <!-- 2. 获取子组件中的arr   写法相对固定：slot-scope="slot(可自定义名称)" -->
+    <!-- 3. 把属性写在 slot-scope="slot(可自定义名称)" 中的子组件就可以获取到 -->
+    
+    <div class="app">
+        <soncpn></soncpn>
+
+
+        <soncpn>
+    <!-- 2. 获取子组件中的arr   写法相对固定：slot-scope="slot(可自定义名称)" -->
+            <template slot-scope="slot">
+    <!-- 3. 把属性写在 slot-scope="slot(可自定义名称)" 中的子组件就可以获取到 -->
+                <span v-for="item in slot.abc">{{item}}</span>
+                <div>{{slot.bbb}}</div>
+            </template>
+        </soncpn>
+    </div>
+
+
+    <template id="cpn">
+        <div>
+            <!-- 1. v-bind:自定义属性名="要绑定的属性" -->
+            <slot :abc="arr" :bbb="num">
+                <ul>
+                    <li v-for="item in arr">{{item}}</li>
+                </ul>
+            </slot>
+        </div>
+    </template>
+
+
+    <script>
+        const obj = new Vue({
+            el: '.app',
+            data: {
+
+            },
+            components: {
+                soncpn: {
+                    template: '#cpn',
+                    data() {
+                        return {
+                            arr: ['小明', '小红', '小黄', '小绿',],
+                            num: 114514,
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

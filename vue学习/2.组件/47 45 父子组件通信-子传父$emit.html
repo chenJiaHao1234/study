@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 子组件向父组件传递参数 -->
+    <!-- 通过子组件让父组件做出什么事情 -->
+    
+    <!-- 整理： -->
+    <!-- 1. 有要发送给父组件的参数 41行 -->
+    <!-- 2. 通过点击按钮向父组件发射参数($emit) 55行 -->
+    <!-- 3. 在调用子组件时监听事件 25行 -->
+    <!-- 4. 父组件监听到事件做出某些事情 73行-->
+
+    <!-- 父组件模板 -->
+    <div class="app" >
+        <!-- 监听发送的自定义事件 v-on:zxc -->
+        <cpnname @zxc="zxct">
+        </cpnname>
+    </div>
+
+    <!-- 子组件模板 -->
+    <template id="cpn">
+        <div>
+            {{qq}}
+            <button v-for="item in arr" @click="send(item)">{{item}}</button>
+        </div>
+    </template>
+
+    <script>
+        // 子组件
+        const cpnname = {
+            template: cpn,
+            // 子组件要向父组件发射的参数
+            data() {
+                return {
+                    arr: [
+                        { id: 'name', name: '小明' },
+                        { id: 'age', name: 23 },
+                        { id: 'sex', name: '男' },
+                    ],
+                    qq: 'qqq',
+                }
+            },
+            methods: {
+                send(item) {
+                    // 发射事件   ↓ 事件类型是自定义的
+                    this.$emit('zxc', item)
+                }
+            }
+
+        }
+
+        // 父组件
+        const obj = new Vue({
+            el: '.app',
+            data: {
+                name: '小明',
+                age: 23,
+                sex: '男',
+            },
+            components: {
+                cpnname: cpnname,
+            },
+            methods: {
+                zxct(item) {
+                    console.log(item);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

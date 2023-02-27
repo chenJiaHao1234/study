@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = '张三';
+        let age = 23;
+        let num = 10;
+
+        // 将以上数据存入对象中
+        // ES5写法 
+        const obj = {
+            name: name,
+            age: age,
+            num: num,
+            // ES5方法的写法
+            fn: function () {
+
+            },
+        }
+        console.log(obj);
+
+
+        // ES6增强写法    优点在于更加简洁
+        const obj2 = {
+            name,
+            age,
+            num,
+            // ES6增强方法的写法
+            fn() {
+
+            },
+        }
+        console.log(obj2);
+    </script>
+</body>
+</html>

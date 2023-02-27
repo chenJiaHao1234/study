@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+        <cpnfather></cpnfather>
+    </div>
+
+
+    <script>
+        const cpn2 = Vue.extend({
+            template: `<div>
+                         <h2>组件二(子组件)</h2>
+                       </div>`
+        })
+        
+        const cpn1 = Vue.extend({
+            template:`<div>
+                        <h2>组件一(父组件)</h2>
+                        <cpnson></cpnson> 
+                      </div>
+                      `,
+            // 可以在组件中添加其他组件  被添加的组件为父组件，添加的组件为子组件
+            // 添加组件后可以直接添加到父组件的内容中
+            // 此案例添加了 cpn2 为子组件 子组件名为 cpnson
+            components: {
+                cpnson: cpn2,
+            }
+        })
+
+        const obj = new Vue ({
+            el: '.app',
+            components: {
+                cpnfather: cpn1,
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+        <!-- 这里不支持驼峰写法 所以属性名 myName 写成 my-name -->
+        <cpnname :my-name="name" :my-age="age" :my-sex="sex">
+
+        </cpnname>
+    </div>
+
+
+    <template id="cpn">
+        <div>
+            <h2>{{myName}}</h2>
+            <h2>{{myAge}}</h2>
+            <h2>{{mySex}}</h2>
+        </div>
+    </template>
+
+    <script>
+        // 子组件
+        const cpnname = {
+            template: cpn,
+            props: {
+                myName: {
+                    type: String,
+                    default: '名字',
+                },
+                myAge: {
+                    type: Number,
+                    default: 0,
+                },
+                mySex: {
+                    type: String,
+                    default: '性别'
+                }
+            }
+        }
+
+        // 父组件
+        const obj = new Vue({
+            el: '.app',
+            data: {
+                name: '小明',
+                age: 23,
+                sex: '男',
+            },
+            components: {
+                cpnname: cpnname,
+            }
+        })
+    </script>
+</body>
+
+</html>

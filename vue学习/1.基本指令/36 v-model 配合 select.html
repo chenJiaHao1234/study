@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+        <div id="" class="app">
+            <select name="" v-model="fruit">
+                <option>苹果</option>
+                <option>西瓜</option>
+                <option>香蕉</option>
+                <option>梨子</option>
+            </select>
+            <h2>{{fruit}}</h2>
+        </div>
+    <script>
+        const obj = new Vue ({
+            el: '.app',
+            data: {
+                fruit: '',
+            }
+        })
+    </script>
+</body>
+</html>

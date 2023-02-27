@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>localStorage</h2>
+    <button onclick="saveDate()">点击保存数据到本地存储</button>
+    <button onclick="readDate()">点击读取本地存储的数据</button>
+    <button onclick="delDate()">点击删除本地存储的数据</button>
+    <button onclick="delAllDate()">点击清空本地存储的数据</button>
+
+    <script>
+        // 总结：
+        // 一.
+        // 浏览器通过 window.localStorage 和 window.sessionStorage 属性来实现本地存储机制
+        // window.localStorage 和 window.sessionStorage 拥有相同的API
+
+        // API: 
+        // 保存：localStorage.setItem(key, value)
+        // 读取：localStorage.getItem(key) 
+        // 删除：localStorage.removeItem(key)
+        // 清空：localStorage.clear()
+
+        // 二.
+        // localStorage 存储的内容不会随浏览器窗口关闭消失，需要手动清除才会消失
+        // sessionStorage 存储的内容会随浏览器窗口关闭而消失
+
+
+
+        // 保存数据到本地存储
+        function saveDate() {
+            // localStorage.setItem(key, value)  是个API, 作用是在本地存储保存一个值
+            // 保存的值默认都为字符串类型
+            localStorage.setItem('msg1', '电脑')
+            localStorage.setItem('msg2', 123)  // 输出的是字符串类型的 123
+            localStorage.setItem('msg3', {name: '刘德华', age: 18}) // 输出的是 [object Object]
+            localStorage.setItem('msg4', JSON.stringify({name: '刘德华', age: 18})) 
+        }
+
+        // 读取本地存储的数据
+        function readDate() {
+            // localStorage.getItem(key)  是个API, 作用是读取本地存储的一个值
+
+            console.log(localStorage.getItem('msg1'));
+            console.log(JSON.parse(localStorage.getItem('msg4')));
+        }
+
+        // 删除本地存储的数据
+        function delDate() {
+            // localStorage.removeItem(key)  是个API, 作用是删除本地存储的一个值
+            localStorage.removeItem()
+        }
+
+        // 清空本地存储的数据
+        function delAllDate() {
+            localStorage.clear()
+        }
+    </script>
+</body>
+</html>

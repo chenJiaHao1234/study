@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+</head>
+<body>
+    <!-- 将 data 中的数据 插入 HTML 里面可以使用 mustache({{}}) -->
+    
+    <!-- 书写格式 -->
+    <div>
+        <!-- 第一种 -->
+        <p>{{num1 + num2}}</p>
+
+        <!-- 第二种 -->
+        <p>{{num1}}{{num2}}</p>
+
+        <!-- 第三种 (中间添加空格)-->
+        <p>{{num1}} {{num2}}</p>
+
+        <!-- 第四种 (中间添加空格)-->
+        <p>{{num1 + ' ' + num2}} </p>
+    </div>
+
+    
+
+    <script>
+        new Vue ({
+            el: 'div',
+            data: {
+                num1: '值1',
+                num2: '值2',
+            }
+        })
+    </script>
+</body>
+</html>

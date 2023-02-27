@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <!-- 阻止事件冒泡 .stop -->
+        <div @click="divclick">
+            <button @click.stop="h4click">点击</button>
+        </div>
+
+        <!-- 阻止默认行为 .prevent -->
+        <form action="bilibili">
+            <input type="submit" value="提交" @click.prevent="inputclick">
+        </form>
+
+        
+    </div>
+    <script>
+        const obj = new Vue ({
+            el: '.app',
+            methods: {
+                divclick() {
+                    console.log('divclick');
+                },
+                h4click() {
+                    console.log('h4click');
+                },
+                inputclick() {
+                    console.log('inputclick');
+                }
+                
+            }
+        })
+    </script>
+</body>
+</html>

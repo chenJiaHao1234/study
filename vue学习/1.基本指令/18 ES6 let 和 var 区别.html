@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="../../vue学习/vue.js文件/vue.js"></script> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+        <button>点击</button>
+        <button>点击</button>
+        <button>点击</button>
+        <button>点击</button>
+        <button>点击</button>
+    </div>
+
+    <script>
+        const btn = document.querySelector('.app').children
+
+        // 1. var 没有作用域 所有下面每次循环都会改变 var 的值 (if和for也是没有作用域的)
+        // 2. 解决方法是  给点击事件添加一个闭包 (函数有作用域)
+        // for (var i = 0; i < btn.length; i++) {
+            
+        //     (function (n) {
+        //         btn[n].addEventListener('click', function () {
+        //             console.log('点击了第' + n + '个按钮');
+        //         })
+        //     })
+        //     (i)
+        // }
+
+
+        // 3. let 和 var 的区别是 let 有作用域 可以看作是一个 var 的升级
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].addEventListener('click', function () {
+                console.log('点击了第' + i + '个按钮');
+            })
+        }
+    </script>
+</body>
+
+</html>

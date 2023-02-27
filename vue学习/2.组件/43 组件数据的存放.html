@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+        <cpnname></cpnname>
+    </div>
+
+    <template id="cpn">
+        <div>
+            <h2>{{titer}}</h2>
+            <h2>123</h2>
+        </div>
+    </template>
+
+
+    <script>
+        const obj = new Vue({
+            el: '.app',
+            data: {
+
+            },
+            components: {
+                cpnname: {
+                    template: cpn,
+
+    // 组件也有自己的 data、methods 属性，和 Vue实例很像
+    // 组件的 data 必须用函数的形式写 而且这个函数需要返回一个对象 返回的对象内保存数据
+
+
+    // 问： 组件中的data为什么是函数
+    // 答： 组件是可复用的， 把组件中的data写成函数， 数据是以函数返回值形式定义的
+    //      每复用一次都会有一个新的data， 每个data都有自己的作用域
+                    data() {
+                        return {
+                            titer: 'abc'
+                        }
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

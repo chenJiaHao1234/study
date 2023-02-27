@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 整理： 主要内容 -->
+    <!-- 父组件直接访问子组件 -->
+    <!-- 1. 在父组件的方法(methods)中直接使用 this.$children 然后会获得一个数组 -->
+    <!--    获得的数组是父组件中所有子组件的一个集合 -->
+    <!-- 2.  下面这个案例点击事件绑定父组件的方法 然后通过 $children 输出了第一个子组件的 num -->
+
+
+    <div class="app">
+        <soncpnname></soncpnname>
+        <soncpnname></soncpnname>
+        <soncpnname></soncpnname>
+        <button @click="btn1click()">点击</button>
+    </div>
+
+    <template id="soncpn1">
+        <div>
+            我是子组件
+        </div>
+    </template>
+
+    <script>
+        // 父组件直接访问子组件 $children 或者 $refs
+
+        const soncpn2 = {
+            template: soncpn1,
+            data() {
+                return {
+                    num: 114514,
+                }
+            },
+            methods: {
+                confn() {
+                    console.log('q123');
+                }
+            }
+        }
+
+        const obj = new Vue ({
+            el: '.app',
+            data: {
+                num1: 0,
+            },
+            methods: {
+                btn1click() {
+                    // 返回的是一个数组
+                    console.log(this.$children);
+                    console.log(this.$children[0].num);
+                }
+            },
+            components: {
+                soncpnname: soncpn2,
+            }
+        })
+    </script>
+</body>
+</html>

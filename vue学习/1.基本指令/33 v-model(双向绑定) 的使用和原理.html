@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 语法格式 -->
+    <!-- v-model="" -->
+    <!-- 1. v-model 是双向绑定的 -->
+    
+    <div class="app">
+        <input type="text" v-model="hi">
+        {{hi}} <br/>
+
+
+        <!-- v-model原理 -->
+        <!-- 2. v-model 其实是 v-bind绑定 value 和 v-on:input 的集合 -->
+        <!-- @input 每次 input 发生改变触发 -->
+        <input type="text" :value="hi" @input="getinput">
+    </div>
+
+    <script>
+        const obj = new Vue ({
+            el: '.app',
+            data: {
+                hi: '你好',  // ----------------------- 这里把value绑定到 hi上
+            },
+            methods: {
+                getinput() {
+                    this.hi = event.target.value // -- 把 hi 的值绑定到 input上
+                }
+            }
+        })
+    </script>
+</body>
+</html>

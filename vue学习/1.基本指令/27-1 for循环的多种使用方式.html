@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = new Vue({
+            el: '',
+            data: {
+                arr: [10, 22, 35, 745, 23, 96, 105, 473],
+            },
+            methods: {
+                // 选出不超过 100 数
+
+                // 第一种方式 使用命令式编程
+                fn() {
+                    let newArr = [];
+                    for (let i = 0; i < this.arr.length; i++) {
+                        if (this.arr[i] < 100) {
+                            newArr.push(this.arr[i])
+                        }
+                    }
+                    return newArr
+                },
+
+
+                // 第二种方式  for...in   
+                // 和命令式编程比起来  特点是同样可以获得数组的索引号 而且更简洁
+                fn2() {
+                    let newArr = [];
+                    for (let i in this.arr) {
+                        if (this.arr[i] < 100) {
+                            newArr.push(this.arr[i])
+                        }
+                    }
+                    return newArr
+                },
+
+
+                // 第二种方式  for...of
+                // for...of 可以直接获得数组中每个数组元素的内容
+                fn3() {
+                    let newArr = []
+                    for (let i of this.arr) {
+                        console.log(i);
+                        if (i < 100) {
+                            newArr.push(i)
+                        }
+                    }
+                    return newArr
+                }
+            }
+        })
+        // 第一种方式
+        console.log(obj.fn());
+
+        // 第二种方式
+        console.log(obj.fn2());
+
+        // 第三种方式
+        console.log(obj.fn3());
+
+    </script>
+</body>
+
+</html>

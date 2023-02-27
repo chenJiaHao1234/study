@@ -1,0 +1,18 @@
+<!-- url 的hash 就是锚点，本质上是改变window.location.href 的属性 -->
+
+
+<!-- 通过直接赋值 location.hash 改变 href 浏览器不会请求新的网页资源 -->
+location.hash = '' 
+
+
+<!-- location.pushState 也可以达到上面的效果 -->
+<!-- pushState 是属于栈结构的 
+     每次改变不会删除而是叠加 使用浏览器左上角的前进后退可以看到之前的 -->
+location.pushState = ({}, '', 'aaa')
+
+
+<!-- replacState 和 pushState 的区别是 replacState 是替换掉原来的url 
+     左上角的前进后退不能使用 -->
+location.replacState = ({}, '', 'bbb')
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 整理： -->
+    <!-- 第一部分  安装和使用 -->
+    <!-- 1. 在终端安装 Vue npm install vue --save -->
+    <!-- 2. 引入 vue。 在需要打包的文件导入 import Vue from 'vue' -->
+    <!-- 3. 然后在要打包的文件正常使用 Vue
+            如果有报错的话 报错内容中有 runtime-only 是因为把 vue 当成了 template
+            在 webpack.config.js 配置下添加 alias 就可以解决 
+            (具体看webpack.config.js) -->
+    
+
+    <!-- 第二部分  组件化进行分类 -->
+    <!-- 1. 给 vue 添加 template 属性 template 的内容会替换掉 el 挂载的元素 
+            (所以在html中可以只写一个标签) -->
+    <!-- 2. 使用组件化把 template 作为子组件抽离出来放在新的文件里面 
+            (此案例放在src/vue/app.js) -->
+    <!-- 3. 再把 app.js 在 app.vue 中把 模板、 脚本、 样式分开
+            注意这里想要能识别 .vue 文件的话要安装 vue-loader 和 vue-template-compiler
+            (npm install --save-dev vue-loader vue-template-compiler) -->
+    <div id="apps"></div>
+    <script src="./dist/burdle.js" type="module"></script>Ｗ
+</body>
+</html>

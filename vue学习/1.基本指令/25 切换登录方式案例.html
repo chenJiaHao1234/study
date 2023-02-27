@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+        <span v-if="num">
+            <label for="user">账号：</label>
+            <input type="text" id="user" placeholder="账号" key="1">
+        </span>
+        <span v-else>
+            <label for="email">邮箱：</label>
+            <input type="text" id="email" placeholder="邮箱" key="0">
+        </span>
+        <button @click="num = !num">点击切换登录方式</button>
+    </div>
+
+    <script>
+        const obj = new Vue({
+            el: '.app',
+            data: {
+                logintype: '账号：',
+                valueconter: '请输入账号',
+                num: true,
+            },
+        })
+    </script>
+</body>
+
+</html>

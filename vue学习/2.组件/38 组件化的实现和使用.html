@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 3. 使用组件  (注意使用时挂载元素)-->
+    <div class="app">
+        <cpnconter></cpnconter>
+        <cpnconter></cpnconter>
+        <cpnconter></cpnconter>
+    </div>
+
+
+    <div class="app2">
+        <cpnconter></cpnconter>
+    </div>
+
+    <!-- ↓ 没有挂载不起作用 -->
+    <div>
+        <cpnconter></cpnconter>
+    </div>
+
+    <script>
+        // 组件的使用分成三个部分
+        // 1. 创建组件构造器
+        // 2. 注册组件
+        // 3. 使用组件
+
+
+        
+        // 详细步骤
+        // 1. Vue.extend 创建组件构造器
+        // 2. 创建组件构造器 传入 template 代表自定义的模板 (这个模板时用于使用组件的地方，显示HTML代码)
+        
+        // 创建组件构造器
+        const cpnconter = Vue.extend({
+            template: `<div>
+                           <h2>组件化内容</h2>
+                       </div>`
+        })
+
+
+        // 注册组件
+        // Vue.component('组件名', 组件构造器名)
+        Vue.component('cpnconter', cpnconter)
+
+
+
+        const obj = new Vue({
+            el: '.app',
+        })
+
+        const obj2 = new Vue({
+            el: '.app2',
+        })
+    </script>
+</body>
+
+</html>

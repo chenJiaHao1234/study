@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 整理： -->
+    <!-- 1. 给 slot 添加 name 可以区分每个 slot -->
+
+
+
+    <div class="app">
+        <!-- 修改指定 name 的slot， 其他的slot不变 -->
+        <soncpn><span slot="slot2">插槽</span></soncpn>
+    </div>
+
+    <template id="cpn">
+        <div>
+            <h2>我是子组件</h2>
+            <!-- 给每个slot添加name进行区分 -->
+            <slot name="slot1"><span>左边</span></slot>
+            <slot name="slot2"><span>中间</span></slot>
+            <slot name="slot3"><span>右边</span></slot>
+        </div>
+    </template>
+    <script>
+        const obj = new Vue({
+            el: '.app',
+            data: {
+
+            },
+            components: {
+                soncpn: {
+                    template: '#cpn',
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

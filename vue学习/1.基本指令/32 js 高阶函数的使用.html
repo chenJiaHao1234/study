@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [10, 22, 35, 745, 23, 96, 105, 473]
+
+
+        // filter 函数的使用
+        // 要求回调函数返回的必须是一个 布尔值
+        // 当返回的是 true 时， 函数内部会自动把这次回调的 i 加入新的数组中
+        // 当返回的是 false 时，过滤掉本次的 i
+        // 语法格式
+        // 数组.filter(function(i) {  // --------- i 为数组元素
+
+        // })
+        const newArr = arr.filter(function (i) {
+            return i < 100
+        })
+        console.log(newArr);
+
+
+        // map 函数的使用
+        // 如果希望数组中的数组元素发生变化时使用 map 函数
+        // 语法格式
+        // 数组.map(function(i) {  // ------------ i 为数组元素
+
+        // })
+        const newArr2 = arr.map(function(i) {
+            return i * 2
+        })
+        console.log(newArr2);
+
+
+
+        // reduce 函数的使用
+        // 可以对数组进行汇总
+        // 语法格式
+        // 数组.reduce(function(prevValue, i) { // ----- i 为数组元素
+                                                // prevValue 类似创建一个变量  let prevValue
+        // }, 0) // ------------------------------ prevValue 的默认值   prevValue = 0
+
+        const newArr3 = arr.reduce(function(sum, i) {
+            return sum + i  // ------------------- 
+        }, 0) // --------------------------------- 这里 0 会变为 上一个返回值(sum + i 的值)
+        console.log(newArr3);
+    </script>    
+</body>
+</html>

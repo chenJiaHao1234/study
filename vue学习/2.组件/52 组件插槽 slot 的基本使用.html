@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 整理： -->
+    <!-- 1. 在组件中 添加 slot 标签 表示插入插槽 -->
+    <!-- 2. slot 标签中的内容表示默认值 默认显示 -->
+    <!-- 3. 在使用组件时往里面输入内容 会替换掉 slot -->
+
+
+    <div class="app">
+        <!-- 1. 不添加内容 显示默认值 -->
+        <soncpn></soncpn>
+
+        <!-- 2. 添加内容替换掉 slot -->
+        <soncpn>
+            <i>添加的内容</i>
+        </soncpn>
+
+        <!-- 3. 添加多个内容的情况 slot 会把他们当作一个整体 -->
+        <soncpn>
+            <i>添加的内容</i>
+            <input type="text">
+            <button>添加的内容</button>
+        </soncpn>
+    </div>
+
+
+    <template id="cpn">
+        <div>
+            <h2>我是子组件</h2>
+            <slot><button>点击</button></slot>
+        </div>
+    </template>
+
+    <script>
+
+        const soncpn = {
+            template: cpn,
+
+        }
+
+
+        const obj = new Vue({
+            el: '.app',
+            data: {
+
+            },
+            components: {
+                soncpn: soncpn,
+            }
+        })
+    </script>
+</body>
+
+</html>

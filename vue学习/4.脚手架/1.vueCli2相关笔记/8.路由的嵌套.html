@@ -1,0 +1,20 @@
+<!-- 路由的嵌套 -->
+<!-- 在home路由中配置子路由door -->
+<!-- 然后 door 是显示在 home 中，
+     所以需要在 home.vue 中的 template 指定 door 显示的位置 -->
+
+const home = () => import('../')
+const door = () => import('../')
+
+new VueRouter({
+    router: [
+      path: '/home',
+      component: home,
+
+      <!-- ↓嵌套的子路由 -->
+      children: [
+        path: 'door', ------------- 注意这里不能加 '/'
+        component: door
+      ]
+    ]
+})

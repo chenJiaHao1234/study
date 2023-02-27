@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+    <style>
+        .color {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 要求: 点击某个内容 让里面的内容变为红色 并让其他变为黑色 -->
+
+    <!-- 作业思路： -->
+    <!-- 1. 遍历数组 fruit 并获得对应的索引号把他们存入li中    v-for="(item, index) in fruit" -->
+    <!-- 2. 创建一个对象属性(num) -->
+    <!-- 3. 根据v-bind:class="{类名：布尔值}""   当对象属性和索引号(index)相等为 true时，添加类名 -->
+    <!-- 4. 创建一个点击事件把点击的li的索引号(index) 赋值给给对象属性(num)。 索引号等于对象属性(num)的li就添加类名color -->
+    <div class="app">
+        <ul>
+            <li v-for="(item, index) in fruit" :class="{color: num == index}" v-on:click = "myclick(index)">{{index}}-{{item}}</li>
+        </ul>
+    </div>
+
+    <script>
+        var fruit = new Vue ({
+            el: '.app',
+            data: {
+                fruit: ['西瓜','苹果','香蕉','梨子','菠萝'],
+                
+                num: -1,
+            },
+            methods: {
+                myclick: function (index) {
+                    this.num = index
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>

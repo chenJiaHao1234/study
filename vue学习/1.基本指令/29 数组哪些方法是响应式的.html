@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // 数组中可以实现响应式的方法  这里arr代表数组
+        const arr = []
+
+
+        // 1. 在数组中添加一个或多个数组元素到末尾
+        arr.push(1, 2)
+
+
+        // 2. 在数组中添加数组元素到开头
+        arr.unshift(3, 4)
+
+
+        // 3. 删除数组开头第一个元素
+        arr.shift()
+
+
+        // 4. 删除数组最后一个元素
+        arr.pop()
+
+
+        // 5. 在数组中任何位置 删除、增加元素
+        // splice(从哪开始，要删除的数量，要添加的数组元素)
+        arr.splice(0, 0, '添加的数组元素')
+
+
+        // 6. vue.set(要修改的对象，索引值，修改后的值)
+        //    vue.set(要修改的对象，对象属性名，对象属性值)
+
+
+        // 7. 翻转数组
+        arr.reverse()
+
+
+        // 响应式删除对象属性
+        // vue.delete(要删除的属性，要删除的属性名)
+
+
+        console.log(arr);
+        // 以上是可以做到响应式的方法
+    </script>
+</body>
+</html>

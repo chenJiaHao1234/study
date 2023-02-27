@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <style>
+        .class1 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <!-- 1. v-bind:class="{类名：布尔值}" 这里添加{}的意思添加了一个对象 -->
+        <!-- 2. {} 中可以添加多个 类名：布尔值 -->
+        <div v-bind:class="{class1: ad, class2: true}">{{content}}</div>
+
+
+        <!-- 第二种写法 -->
+        <div v-bind:class="classes()">{{content}}</div>
+        <button v-on:click="opposite">点击</button>
+    </div>
+
+    <script>
+        let ap = new Vue({
+            el: '.app',
+            data: {
+                content: '你好',
+                ad: true,
+            },
+            methods: {
+                // 3. 改变 ap(this).ad 的布尔值来控制 类名class1 的添加和移除实现动态绑定
+                opposite: function () {
+                    this.ad = !this.ad
+                },
+
+                // 第二种写法
+                classes: function () {
+                    return {class1: this.ad, class2: true};
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

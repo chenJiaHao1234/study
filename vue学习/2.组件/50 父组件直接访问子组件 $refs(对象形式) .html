@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 整理： 主要内容 -->
+    <!-- 父组件直接访问子组件 -->
+    <!-- 1. 在父组件的方法(methods)中直接使用 this.$refs 然后会获得一个空的对象 -->
+    <!--    需要在子组件添加 ref="属性名" -->
+
+
+    <div class="app">
+        <soncpnname ref="abc"></soncpnname>
+        <soncpnname ref="aaa"></soncpnname>
+        <soncpnname ref="bbb"></soncpnname>
+        <button @click="btn1click()">点击</button>
+    </div>
+
+    <template id="soncpn1">
+        <div>
+            我是子组件
+        </div>
+    </template>
+
+    <script>
+        // 父组件直接访问子组件 $children 或者 $refs(常见)
+        const soncpn2 = {
+            template: soncpn1,
+            data() {
+                return {
+                    num: 114514,
+                }
+            },
+            methods: {
+                confn() {
+                    console.log('q123');
+                }
+            }
+        }
+
+        const obj = new Vue ({
+            el: '.app',
+            data: {
+                num1: 0,
+            },
+            methods: {
+                btn1click() {
+// 和 $children 不同 $refs 返回的是一个空的对象  需要在子组件添加 ref="属性名"
+                    console.log(this.$refs);
+                    // 输出 ref="abc" 的子组件的num
+                    console.log(this.$refs.abc.num);
+                }
+            },
+            components: {
+                soncpnname: soncpn2,
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <!-- 添加 '' 会显示字符串数据  -->
+        <p v-bind:class="['a', a]"></p>
+
+        <!-- 第二种写法 -->
+        <p v-bind:class="arr()"></p>
+    </div>
+
+    <script>
+        let ap = new Vue ({
+            el: '.app',
+            data: {
+                a: 'a123',
+            },
+            methods: {
+                // 第二种写法
+                arr: function() {
+                    return ['a', this.a];
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+</head>
+<body>
+    <!-- 加上 v-once 的标签元素不会再跟着页面响应进行改变 -->
+    <!-- 打开页面在控制台改变 content 的值可以看到区别(app.content) -->
+    <div class="app">
+        <p>{{content}}</p>
+        <p v-once>{{content}}</p>
+        </div>
+
+    <script>
+        let app = new Vue ({
+            el: '.app',
+            data: {
+                content: '123',
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. const 常量是不可变的 不能被修改的                       可以看注意点一
+        // 2. const 创建常量时必须赋值                                可以看注意点二
+        // 3. const 定义的对象不可以修改， 但可以修改对象内的属性和方法  可以看注意点三
+        // 4. 在实际开发中重要的且不希望它发生改变的代码 建议使用 const
+        // 注意点一
+        const num = 1;
+        // num = 10;    这个是错误
+
+
+        // 注意点二
+        // const num2;  这个是错误
+
+
+        // 注意点三
+        const obj = {
+            name: '张三',
+        }
+        obj.name = '李四'
+        console.log(obj.name);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<script>
+    // 需要多次网络请求的情况下使用 all 
+    // 最后结果会以数组的形式
+    Promise.all([
+        new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('网络请求1')
+            }, 2000)
+        }),
+        new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('网络请求2')
+            }, 3000)
+        })
+    ]).then((res) => {
+        console.log(res);
+    })
+</script>

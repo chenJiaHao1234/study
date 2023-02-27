@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 主要内容 -->
+    <!-- 子组件中 input 值改变使父组件属性一起改变 实现双向绑定 -->
+    <!-- 1. 使用双向绑定时 父组件向子组件传递参数(props)的属性不能直接进行双向绑定 -->
+    <!--    Vue 建议使用data或者compued创建一个属性再进行绑定 46行 -->
+    <!-- 2.  -->
+
+    <div class="app">
+        <cpnname :number1="num1" :number2="num2" @revisenum1="revisenum1"></cpnname>
+    </div>
+
+
+    <template id="cpn">
+        <div>
+            <h2>number1:{{number1}}</h2>
+            <h2>data:{{datanumber1}}</h2>
+            <!-- <input type="text" v-model="datanumber1"> -->
+            <input type="text" :value="datanumber1" @input="num1input">
+            <h2>number1:{{number2}}</h2>
+            <h2>data:{{datanumber2}}</h2>
+            <input type="text" v-model="datanumber2">
+        </div>
+    </template>
+
+    <script>
+        const cpnname = {
+            template: cpn,
+            props: {
+                number1: {
+                    type: Number,
+                },
+                number2: {
+                    type: Number,
+                },
+            },
+            data() {
+                return {
+                    datanumber1: this.number1,
+                    datanumber2: this.number2,
+                }
+            },
+            methods: {
+                num1input($event) {
+                    this.datanumber1 = $event.target.value
+                    this.$emit('revisenum1', this.datanumber1)
+                }
+            }
+        }
+
+        const obj = new Vue({
+            el: '.app',
+            data: {
+                num1: 1,
+                num2: 0,
+            },
+            components: {
+                cpnname: cpnname,
+            },
+            methods: {
+                revisenum1(value) {
+                    this.num1 = parseFloat(value)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

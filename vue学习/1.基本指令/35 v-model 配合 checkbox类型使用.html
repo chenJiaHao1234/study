@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <!-- 复选框选中为 true 未选中为 false -->
+        <label for="agree">
+            <input type="checkbox" id="agree" v-model="isagree">同意条款
+        </label>
+        <h2>同意条款：{{isagree}}</h2>
+        <button :disabled="!isagree">下一步</button> <br />
+
+
+
+        <label for="one">
+            <input type="checkbox" id="one" value="足球" v-model="movement"> 足球
+        </label>
+        <label for="two">
+            <input type="checkbox" id="two" value="篮球" v-model="movement"> 篮球
+        </label>
+        <label for="three">
+            <input type="checkbox" id="three" value="乒乓球" v-model="movement"> 乒乓球
+        </label>
+        <h2>{{movement}}</h2>
+    </div>
+    
+    <script>
+        const obj = new Vue ({
+            el: '.app',
+            data: {
+                isagree: false,
+                movement: [],
+            }
+        })
+        
+    </script>
+</body>
+</html>

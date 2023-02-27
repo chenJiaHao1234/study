@@ -1,0 +1,19 @@
+<!-- 路由的映射和呈现 -->
+<!-- 简单讲就是在 router 文件中把组件和路径进行绑定 -->
+
+
+<!-- 1. 在 router 的 index 文件中找到 routes数组 -->
+<!-- 2. 数组中创建对象,一个组件对应一个对象 -->
+<!-- 具体如下 -->
+routes: [
+    {
+      path: '', ------------- 当出现路径为空''时,(redirect)重新定义路径为 '/home'
+      redirect: '/home', ---- redirect(重定向)
+    },
+    {
+      path: '/home', -------- 出现的路径
+      component: home ------- 对应的组件
+    }
+  ],
+  mode: 'history', ---------- 修改模式为 history ,默认是 hash 模式(history是什么?)
+  

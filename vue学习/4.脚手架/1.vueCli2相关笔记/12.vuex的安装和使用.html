@@ -1,0 +1,55 @@
+1. 安装 vuex
+npm install vuex --save
+
+
+2.配置 vuex
+(1)建议新建一个 文件夹store 并创建 index.js文件
+(2)导入相关文件 如vue vuex等
+(3)安装插件 Vue.use(插件)
+(4)创建对象 const store = new Vuex.Store({})
+(5)导出 export default store
+(6)在 main.js文件 进行导入 import
+
+
+vuex的使用
+(1) vuex 相当于一个管理工具 把其他页面的 data、 methods、等统一写在 vuex 中
+    需要使用时再进行调用
+
+(2) vuex 中建议只存在一个 state属性 state就类似于data
+
+(3) vuex 中的 getters 相当于 computed(计算属性)
+
+(4) vuex 中的 state 状态更新的唯一方式就是通过提交 mutations
+    操作流程为:
+    第一种提交方式(普通的提交方式)
+    在 methods 中定义方法 
+    -> 在定义的方法中提交到mutations  如:this.$store.commit(函数名, 参数)
+    -> 执行提交对应函数名的方法
+
+    第二种提交方式(对象的方式提交)
+    在 methods 中定义方法 -> 
+    在定义的方法中提交到mutation   如:this.$store.commit({
+                                      type: 函数名,
+                                      参数名: 参数
+                                    })
+    -> 执行提交的函数
+    (注意以对象的方式提交的参数会存进 payload对象中, 在使用时要以 payload.参数名)
+
+(5) vuex 数据的响应式原理 
+    在页面生成时就存在的属性可以做到响应式，
+    新添加的属性不可以做到响应式修改
+
+(6) vuex 中的 actions 是用于处理异步操作
+    操作流程为:
+    在 methods 中定义方法
+    -> 在定义的方法中提交到actions。               this.#store.dispatch(函数名)
+    -> 再由 actions 处理异步操作后提交到mutation。 context.commit(函数名)
+    -> 执行提交到 mutation 对应函数名的方法
+
+(7) vuex 中的 modules 用于分割模块。 简单来说就像在vuex中又创建了一个vuex
+    (1)在 modules 中自定义一个模块， 这个模块拥有 vuex 的其他四个属性
+    (2)在这个自定义模块中可以正常收到提交的 mutations
+    (3)在其他地方可以正常使用这个自定义模块中的 getters
+    (4)自定义模块的 actions 在提交时是提交给当前模块(也就是自己)的 mutations
+    (5)如果这个自定义模块需要使用vuex的的属性需要在函数中传入rootstate
+       root 翻译为根的意思

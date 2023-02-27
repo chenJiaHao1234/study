@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <!-- 语法格式 -->
+        <!-- v-for="名称(自定义) in 数组名" -->
+        <ul>
+            <li v-for="item in arr">{{item}}</li>
+        </ul>
+
+        <!-- 遍历数组并获得其索引号 (item, index)-->
+        <!-- ！注意顺序 第一个获得的是属性值 -->
+        <ul>
+            <li v-for="(item, index) in arr">{{index}}.{{item}}</li>
+        </ul>
+
+
+        <!-- 遍历对象 -->
+        <ul>
+            <li v-for="item in me">{{item}}</li>
+            <li>{{me.age}}</li>
+        </ul>
+
+        <!-- 遍历对象并获得对象属性名 (item, key))-->
+        <ul>
+            <li v-for="(item, key, index) in me">{{index}}.{{key}}:{{item}}</li>
+        </ul>
+    </div>
+
+    <script>
+        const obj = new Vue ({
+            el: '.app',
+            data: {
+                arr: ['苹果', '香蕉', '桃子', '西瓜'],
+                me: {
+                    name: 'chen',
+                    age: 23,
+                    sex: 'man',
+                }
+            }
+        })
+    </script>
+</body>
+</html>

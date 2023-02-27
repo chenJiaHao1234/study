@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <h2>挂载的第一个div</h2>
+        <cpnconter></cpnconter>
+        <cpnconter2></cpnconter2>
+    </div>
+
+    <div class="app2">
+        <h2>挂载的第二个div</h2>
+        <cpnconter></cpnconter>
+        <cpnconter2></cpnconter2>
+    </div>
+
+    <script>
+        // 创建组件构造器
+        const cpnconter = Vue.extend({
+            template: `<div>
+                           <h2>组件化内容</h2>
+                       </div>`
+        })
+
+
+        // 全局组件  页面中所有 Vue实例 都可以使用
+        Vue.component('cpnconter', cpnconter)
+
+        const obj = new Vue ({
+            el: '.app',
+        })
+
+        const obj2 = new Vue ({
+            el: '.app2',
+            components: {
+                // 局部组件  只有挂载了当前 Vue实例 的元素才可使用
+            // 组件名: 组件构造器名
+                cpnconter2: cpnconter
+            }
+        })
+    </script>
+</body>
+</html>

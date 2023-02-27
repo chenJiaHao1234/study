@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vue学习/vue.js文件/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 整理： -->
+    <!-- 1. 子组件访问父组件 $parent 只能访问他自身的父组件 45行 -->
+    <!-- 2. 子组件想访问根组件要用 $root 48行 -->
+    <div class="app">
+        <amongcpns></amongcpns>
+    </div>
+
+    <!-- Vue实例 的子组件 -->
+    <template id="amongcpn">
+        <div>
+            <h2>子组件</h2>
+            <button @click="btnclick">点击获取父组件num</button>
+            <soncpns></soncpns>
+        </div>
+    </template>
+
+
+    <!-- Vue实例 的子组件的子组件 -->
+    <template id="soncpn">
+        <div>
+            <h2>子组件的子组件</h2>
+            <button @click="btn2click">点击获取父组件num</button>
+        </div>
+    </template>
+    
+    
+    <script>
+    // <!-- Vue实例 的子组件的子组件 -->
+        const soncpns = {
+            template: soncpn,
+            methods: {
+                btn2click() {
+                    // $parent 访问他自身的父组件
+                    console.log(this.$parent);
+
+                    // $root 访问根组件  (这个案例的根组件就是Vue实例)
+                    console.log(this.$root);
+                }
+            }
+        }
+
+
+    // <!-- Vue实例 的子组件 -->
+        const amongcpns = {
+            template: amongcpn,
+            methods: {
+                btnclick() {
+                    console.log(this.$parent);
+                }
+            },
+            components: {
+                soncpns,
+            }
+        }
+
+
+        const obj = new Vue({
+            el: '.app',
+            data: {
+                num: '父组件的num',
+            },
+            components: {
+                amongcpns,
+            }
+        })
+    </script>
+</body>
+
+</html>
